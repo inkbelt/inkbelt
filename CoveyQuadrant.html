@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Covey Quadrant</title>
+  <style>
+    body {
+      position: relative;
+      display: flex;
+      background: #ddc;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      position: absolute;
+      margin: auto;
+    }
+
+    .nav1, .nav2 {
+      position: absolute;
+      bottom: 40%;
+      padding-top: 0px;
+      line-height: 40px;
+      font-size: 50px;
+      width: 100px;
+      height: 60px;
+      font-family: monospace;
+      font-weight: 700;
+      display: block;
+      margin: auto;
+      margin-top: 20px;
+      background: #ddd;
+      color: #444;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 7px #000B;
+    }
+    .nav1 {
+      left: 50px;
+    }
+    .nav2 {
+      right: 50px;
+    }
+
+  </style>
+
+  <script>
+    function GoBack() {
+      swooshOut.play();
+      setTimeout(function() {
+        window.location = 'Flashcards8.html';
+      }, 400);
+    }
+
+    function GoForward() {
+      swooshIn.play();
+      setTimeout(function() {
+        window.location = 'index.html';
+      }, 300);
+    }
+  </script>
+
+
+</head>
+
+<body>
+
+  <img src="assets/quadrant.png">
+  <div id="container"></div>
+
+  <script src="./js_css/kinetic-v5.0.1.min.js"></script>
+  <script src="./js_css/howler.js"></script>
+  <script>
+    var clickity = new Howl({urls: ["./assets/click.ogg"] })
+    var swooshIn = new Howl({urls: ["./assets/swoosh1.ogg"] })
+    var swooshOut = new Howl({urls: ["./assets/swoosh2.ogg"] })
+  </script>
+  <script src="./js_css/coveyQuad.js"></script>
+
+  <button class='nav1' onclick='GoBack()'> &#8678; </button>
+  <button class='nav2' onclick='GoForward()'> &#8680; </button>
+
+  </body>
+</html>
+

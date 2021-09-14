@@ -1,0 +1,146 @@
+/*                          */
+/*                          */
+/*    FlashcardsMain.css    */
+/*                          */
+/*                          */
+
+
+	body {
+		display: flex;
+		/*flex-direction: column;*/
+		justify-content: center;
+		align-items: center;
+		background: #888;
+		/*background-image: url('./assets/paisley_back.jpg');*/
+	}
+
+	.card, .holder1, .holder2  {
+		display: flex;
+		justify-content: center;
+		background: #ddd;
+	}
+
+	.card {
+		position: relative;
+		align-items: flex-end;
+		flex-wrap: wrap;
+		width: 50%;
+		height: 70%;
+		margin: auto;
+		border-style: solid;
+		border-width: 4px;
+		border-color: #333;
+		border-radius: 30px;
+	}
+
+	.feedback {
+		position: absolute;
+		top: 40px;
+		font-family: monospace;
+		font-size: 30;
+		text-align: center;
+		margin-right: 70px;
+	}
+
+	.holder1, .holder2 {
+		background: #0000;
+		position: absolute;
+		align-items: center;
+		margin-left: 50px;
+		margin-right: 50px;
+		/*padding: 0px;*/
+	}
+	.holder1 {
+		top: 70px;
+		/*margin-top: 0px;*/
+	}
+	.holder2 {
+		bottom: 25px;
+
+		/*margin-bottom: 10px;*/
+	}
+	.figure {
+		font-family: monospace;
+		font-size: 50;
+		margin-left: 14;
+		margin-right: 14;
+		line-height: 4px;
+	}
+	input {
+		background: #ddd;
+		width: 80;
+		height: 80;
+		border: 1px solid #777;
+		text-align: center;
+	}
+	button {
+		/*text-align: center;*/
+		width: 100;
+		height: 50;
+		font-family: monospace;
+		font-size: 20;
+		box-shadow: 2px 2px 4px #000B;
+		border-radius: 8px;
+		margin-right: 30px;
+	}
+
+	.nav1, .nav2 {
+	  position: absolute;
+	  bottom: 30%;
+	  padding-top: 0px;
+	  line-height: 40px;
+	  font-size: 50px;
+	  width: 100px;
+	  height: 60px;
+	  font-family: monospace;
+	  font-weight: 700;
+	  display: block;
+	  margin: auto;
+	  margin-top: 20px;
+	  background: #ddd;
+	  color: #444;
+	  border-radius: 10px;
+	  cursor: pointer;
+	  box-shadow: 2px 2px 7px #000B;
+	}
+
+	.nav1 {
+	  left: 50px;
+	}
+	.nav2 {
+	  right: 50px;
+	}
+
+	.holder3 {
+		position: absolute;
+		bottom: 30;
+		left: 15%;
+		width: 500px;
+		height: 500px;
+
+	}
+
+	.holder4 {
+		position: absolute;
+		bottom: 20;
+		right: 15%;		
+	}
+
+	#cat_sprite {
+		position: absolute;
+		width: 150px;
+		height: 150px;
+
+		background: 
+			url('../assets/plyr1.png') 0px 0px;
+	}
+
+	#drone {
+		width: 26px;
+	    height: 40px;
+
+		background: 
+		url('../assets/drone.bmp') 0px 0px;
+	}
+
+

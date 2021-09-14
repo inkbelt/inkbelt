@@ -1,0 +1,108 @@
+/*                          */
+/*                          */
+/*    cat.css               */
+/*                          */
+/*                          */
+
+
+	body {
+		display: flex;
+		/*flex-direction: column;*/
+		justify-content: center;
+		align-items: center;
+		background: #888;
+		background-image: linear-gradient(#888, #555);
+	}
+
+	p {
+		position: absolute;
+	}
+
+
+	#cat_sprite {
+		position: absolute;
+		width: 150px;
+		height: 150px;
+		left: 100px;
+		top: 100px;
+		background: 
+			url('./assets/plyr3.png') 0px 0px;
+	}
+
+	#drone {
+		width: 26px;
+	    height: 40px;
+		background: 
+		url('./assets/drone.bmp') 0px 0px;
+	}
+
+
+	.holder1 {
+		position: absolute;
+		left: 20%;
+		top: 0px;
+		width: 90%;
+		height: 90%;
+
+	}
+
+	.holder4 {
+		position: absolute;
+		right: 15%;		
+		bottom: 20;
+	}
+
+
+
+
+
+
+	}
+	.figure {
+		font-family: monospace;
+		font-size: 50;
+		margin-left: 14;
+		margin-right: 14;
+		line-height: 4px;
+	}
+
+	}
+	button {
+		/*text-align: center;*/
+		width: 100;
+		height: 50;
+		font-family: monospace;
+		font-size: 20;
+		box-shadow: 2px 2px 4px #000B;
+		border-radius: 8px;
+		margin-right: 30px;
+	}
+
+	.nav1, .nav2 {
+	  position: absolute;
+	  bottom: 30%;
+	  padding-top: 0px;
+	  line-height: 40px;
+	  font-size: 50px;
+	  width: 100px;
+	  height: 60px;
+	  font-family: monospace;
+	  font-weight: 700;
+	  display: block;
+	  margin: auto;
+	  margin-top: 20px;
+	  background: #ddd;
+	  color: #444;
+	  border-radius: 10px;
+	  cursor: pointer;
+	  box-shadow: 2px 2px 7px #000B;
+	}
+
+	.nav1 {
+	  left: 50px;
+	}
+	.nav2 {
+	  right: 50px;
+	}
+
+

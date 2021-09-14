@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+
+
+
+<!-- ---------------- HEAD ---------------- -->
+
+<head>
+
+  <title>Inkbelt</title>
+
+  <script src="./js_css/howler.js"></script>
+
+  <script>
+    var clickity = new Howl({urls: ["./assets/click.ogg"] });
+    var swooshIn = new Howl({urls: ["./assets/swoosh1.ogg"] });
+    var swooshOut = new Howl({urls: ["./assets/swoosh2.ogg"] });
+
+    function Soundy() {
+      if (Math.random() < 0.6) {
+        clickity.play();
+      } else if (Math.random() > 0.5) {
+         swooshIn.play();
+      } else {
+        swooshOut.play();
+      }
+    }
+
+    function GoBack() {
+      swooshOut.play();
+      setTimeout(function() {
+        window.location = 'CoveyQuadrant.html';
+      }, 400);
+    }
+
+    function Clicked() {
+      clickity.play();
+      setTimeout(function() {
+        window.location = './cat';
+      }, 300);
+    }
+
+    function GoForward() {
+      swooshIn.play();
+      setTimeout(function() {
+        window.location = 'Flashcards8.html';
+      }, 300);
+    }
+
+
+  </script>
+
+
+<!-- ---------------- STYLE ---------------- -->
+
+  <style>
+    body {
+      font-family: monospace;
+      background: #665;
+/*      margin: 10px;
+      padding: 10px;*/
+    }
+    h1 {
+      text-align: center;
+      text-decoration: overline underline;
+      margin-top: 70px;
+      margin-bottom: 20px;
+      font-size: 100px;
+      font-weight: 600;
+      cursor: default;
+      /*-webkit-text-stroke: 1px white;*/
+      text-shadow:  -1px -1px 6px #ddd,
+                     1px -1px 6px #ddd,
+                    -1px  1px 6px #ddd,
+                     1px  1px 6px #ddd;
+    }
+
+    .holder1 {
+      display: flex;
+      justify-content: center;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 400;
+      margin-left: 70px;
+      margin-right: 10px;
+    }
+
+    a {
+      text-shadow:  -1px -1px 0 #111,
+                     1px -1px 0 #111,
+                    -1px  1px 0 #111,
+                     1px  1px 0 #111;
+    }
+
+    a:link, a:visited { color: #fff; }
+    a:hover, a:active { color: hotpink; text-decoration: underline;
+      cursor: crosshair; font-size: 40px; }
+
+    button {
+      display: block;
+      margin: auto;
+      margin-top: 20px;
+      background: #ddd;
+      color: #444;
+      font-family: monospace;
+      font-size: 25px;
+      font-weight: 700;
+      width: 125px;
+      height: 60px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 7px #000B;
+    }
+
+    .nav1, .nav2 {
+      position: absolute;
+      padding-top: 0px;
+      line-height: 40px;
+      bottom: 30%;
+      font-size: 50px;
+      width: 100px;
+      height: 60px;
+    }
+    .nav1 {
+      left: 50px;
+    }
+    .nav2 {
+      right: 50px;
+    }
+
+  </style>
+</head>
+
+
+
+<!-- ---------------- BODY ---------------- -->
+
+
+<body>
+
+  <div>
+    <h1>&nbsp;&emsp;Inkbelt&emsp;&nbsp;</h1>
+  </div>
+
+  <div class='holder1'>
+    <h2><a href="Flashcards8.html" alt="Math Flashcards">Flashcards</h2>
+    <h2><a href="CoveyQuadrant.html" alt="Time Management Principles">Covey Quadrant</a></h2>
+  </div>
+
+  <button class='clicky' onclick='clickity.play()'> Click </button>
+
+  <button class='nav1' onclick='GoBack()'> &#8678; </button>
+  <button class='nav2' onclick='GoForward()'> &#8680; </button>
+ 
+  </body>
+</html>
+
