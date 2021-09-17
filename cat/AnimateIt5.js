@@ -14,18 +14,16 @@ console.log(style_declaration);
 let long_log = '';
 
 function logIt(short_log) {
-	long_log = long_log + ' ' + short_log
+	long_log = long_log + ' ' + short_log;
+	console.clear();
 	console.log(long_log);
 }
-
-
 
 // Declarations __________________________________________________
 
 let cat = document.getElementById('cat_sprite');
 
-
-let cat_pos = [150, 150];
+let cat_pos = [200, 100];
 let moving = false;
 
 let go_left  = false;
@@ -33,9 +31,43 @@ let go_right = false;
 let go_up    = false;
 let go_down  = false;
 
-let delay = 500;
+let anim_delay = 200;
 
 
+// Key Bindings _____________________________________________
+
+document.onkeydown = function() {  //    DOWN
+	switch(window.event.key) {
+		case 'j': go_left  = true; catGo(); spriteGo(); break;
+		case 'l': go_right = true; catGo(); spriteGo(); break;
+		case 'i': go_up    = true; catGo(); spriteGo(); break;
+		case 'k': go_down  = true; catGo(); spriteGo(); break;
+	}
+}
+
+document.onkeyup = function() {    //     UP
+	switch(window.event.key) {
+		case 'j': go_left  = false; catStop(); spriteStop(); break;
+		case 'l': go_right = false; catStop(); spriteStop(); break;
+		case 'i': go_up    = false; catStop(); spriteStop(); break;
+		case 'k': go_down  = false; catStop(); spriteStop(); break;
+	}
+}
+
+function isStopped() {
+	logIt("Stop check");
+	if (go_left  == false
+	 && go_right == false 
+	 && go_up    == false 
+	 && go_down  == false) {
+		return true;
+	} else { return false; }
+} 
+
+
+// Movement __________________________________________________
+
+let move_timer = null;
 
 function moveCat() {
 	if (go_left  == true) { cat_pos[0] -= 10; }
@@ -46,43 +78,22 @@ function moveCat() {
 	cat.style.top  = cat_pos[1];
 }
 
-function goCat() {
-	logIt('Go cat.');
-  if(anim_timer) return;
-  anim_timer = setInterval(moveCat, delay);
-	console.log('Go cat.');
+function catGo() {
+//  console.log(go_left +' '+ go_right +' '+ go_up +' '+ go_down);
+	logIt('Go.');
+  if (move_timer) return;
+  move_timer = setInterval(moveCat, anim_delay);
 }
 
-function stopCat() {
-	logIt('Stop cat.');
-	clearInterval(anim_timer);
+function catStop() {
+//	logIt('Cat stop.');
+//	clearInterval(move_timer);
+//  move_timer = null;
 }
-
-var anim_timer;
-
-document.onkeydown = function() {
-	switch(window.event.key) {
-		case 'j': go_left  = true; goCat(); spriteGo(); break;
-		case 'l': go_right = true; goCat(); spriteGo(); break;
-		case 'i': go_up    = true; goCat(); spriteGo(); break;
-		case 'k': go_down  = true; goCat(); spriteGo(); break;
-	}
-}
-
-
-document.onkeyup = function() {
-	switch(window.event.key) {
-		case 'j': go_left  = false; stopCat(); spriteStop(); break;
-		case 'l': go_right = false; stopCat(); spriteStop(); break;
-		case 'i': go_up    = false; stopCat(); spriteStop(); break;
-		case 'k': go_down  = false; stopCat(); spriteStop(); break;
-	}
-}
-
 
 // Sprite Animation ___________________________________________
 
-let sprite_timer;
+let sprite_timer = null;
 
 let   pos_left = 1200;	   // start position for image slicer
 const min_left = 900;
@@ -103,21 +114,25 @@ const frame_offset = 150;
 
 
 function spriteGo() {       // console.log('Begin animation.');
-	logIt('Sprite go.');
+//	logIt('Sprite go.');
 	if (moving == false) {
+		pointCat();
 		moving = true;
-		sprite_timer = setInterval(poseCat, delay);
+		sprite_timer = setInterval(poseCat, anim_delay);
 	}
 }
 
 function spriteStop() {     // console.log('Stop animation.');
-	logIt('Sprite stop.');
-	clearInterval(sprite_timer);
-	moving = false;
+//	logIt('Sprite stop.');
+	if (isStopped()) {
+		clearInterval(sprite_timer);
+		sprite_timer = null;
+		moving = false;
+	}
 }
 
-function poseCat() {
 
+function pointCat() {
 	if (go_right == true) {
 		pos_1 = pos_right;
 		position = pos_right - 150;
@@ -128,12 +143,15 @@ function poseCat() {
 		position = pos_left - 150;
 		min_pos = min_left;
 	}
+}
+
+
+function poseCat() {
 
 	cat.style.backgroundPosition = position + 'px 0px';
-	if 
-		(position <= min_pos) {
-		position = pos_1;												// reset position
 
+	if (position <= min_pos) {
+		position = pos_1;												// reset position
 	} else {
 		position = position - frame_offset;			// move position
 	}
@@ -142,5 +160,12 @@ function poseCat() {
 
 
 
-
+function poseCat0() {
+	cat.style.backgroundPosition = position + 'px 0px';
+	if (position <= min_pos) {
+		position = pos_1;												// reset position
+	} else {
+		position = position - frame_offset;			// move position
+	}
+}
 
