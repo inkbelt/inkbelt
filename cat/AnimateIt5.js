@@ -4,16 +4,12 @@
 //
 //
 
-
 // Debug Helpers _________________________________________________
 
 console.log('AnimateIt5');
-const style_declaration = document.getElementById('cat_sprite').style;
-console.log(style_declaration);
-
 let long_log = '';
 
-function logIt(short_log) {
+function log(short_log) {
 	long_log = long_log + ' ' + short_log;
 	console.clear();
 	console.log(long_log);
@@ -24,7 +20,7 @@ function logIt(short_log) {
 let cat = document.getElementById('cat_sprite');
 
 let cat_pos = [200, 100];
-let moving = false;
+let is_moving = false;
 
 let go_left  = false;
 let go_right = false;
@@ -47,7 +43,6 @@ document.onkeydown = function() {  //    DOWN
 		case 'd': go_right = true; catGo(); spriteGo(); break;
 		case 'w': go_up    = true; catGo(); spriteGo(); break;
 		case 's': go_down  = true; catGo(); spriteGo(); break;
-
 	}
 }
 
@@ -62,20 +57,15 @@ document.onkeyup = function() {    //     UP
 		case 'd': go_right = false; catStop(); spriteStop(); break;
 		case 'w': go_up    = false; catStop(); spriteStop(); break;
 		case 's': go_down  = false; catStop(); spriteStop(); break;
-
 	}
 }
 
 function isStopped() {
-//	logIt("Stop check");
-	if (go_left  == false
-	 && go_right == false 
-	 && go_up    == false 
-	 && go_down  == false) {
+	if (go_left  == false && go_right == false 
+	 && go_up == false    && go_down  == false) {
 		return true;
 	} else { return false; }
 } 
-
 
 // Movement __________________________________________________
 
@@ -96,7 +86,7 @@ function catGo() {
 }
 
 function catStop() {
-  //	logIt('Cat stop.');
+  //	log('Cat stop.');
   //	clearInterval(move_timer);
   //  move_timer = null;
 }
@@ -113,7 +103,6 @@ const min_right = 450;
 const blink_left = 300;
 const blink_right = 150;
 
-
 let pos_1 = pos_left;
 let position = pos_left;
 let min_pos = min_left;
@@ -122,14 +111,13 @@ let direction = 'left';
 
 const frame_offset = 150;
 
-
 function pointLeft() {
 	pos_1 = pos_left;
 	position = pos_left - 150;
 	min_pos = min_left;
 	direction = 'left';
-	logIt(moving);
-	logIt(direction);
+	log(is_moving);
+	log(direction);
 }
 
 function pointRight() {
@@ -137,24 +125,13 @@ function pointRight() {
 	position = pos_right - 150;
 	min_pos = min_right;
 	direction = 'right';
-	logIt(moving);
-	logIt(direction);
-}
-
-
-function pointCat() {
-	logIt('POINT');
-	if (!moving && go_left  ) {  pointLeft(); }
-	if (!moving && go_right ) { pointRight(); }
-
-	if (moving && go_left  && direction == 'right' ) {	pointLeft(); }
-	if (moving && go_right && direction == 'left' )  { pointRight(); }
+	log(is_moving);
+	log(direction);
 }
 
 function spriteGo() {
-	pointCat();
-	if (moving == false) {
-		moving = true;
+	if (is_moving == false) {
+		is_moving = true;
 		sprite_timer = setInterval(poseCat, anim_delay);
 	}
 }
@@ -163,11 +140,20 @@ function spriteStop() {
 	if (isStopped()) {
 		clearInterval(sprite_timer);
 		sprite_timer = null;
-		moving = false;
+		is_moving = false;
 	}
 }
 
+function pointCat() {
+	if (!is_moving && go_left  ) {  pointLeft(); }
+	if (!is_moving && go_right ) { pointRight(); }
+
+	if (is_moving && go_left  && direction == 'right' ) {	pointLeft(); }
+	if (is_moving && go_right && direction == 'left' )  { pointRight(); }
+}
+
 function poseCat() {                      // main sprite engine
+	pointCat();
 	cat.style.backgroundPosition = position + 'px 0px';
 	if (position <= min_pos) {
 		position = pos_1;									    // reset position
@@ -175,4 +161,3 @@ function poseCat() {                      // main sprite engine
 		position = position - frame_offset;		// change position
 	}
 }
-

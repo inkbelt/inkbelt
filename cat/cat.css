@@ -4,14 +4,12 @@
 /*                          */
 /*                          */
 
-
 	body {
 		display: flex;
-		/*flex-direction: column;*/
 		justify-content: center;
 		align-items: center;
-		background: #888;
-		background-image: linear-gradient(#888, #555);
+		background: #689;
+		background-image: linear-gradient(#acd, #578);
 	}
 
 	p {
@@ -26,14 +24,14 @@
 		left: 200px;
 		top: 100px;
 		background: 
-			url('./assets/plyr3.png') 0px 0px;
+			url('./assets/plyr1.png') 0px 0px;
 	}
 
 	#drone {
 		width: 26px;
 	    height: 40px;
 		background: 
-		url('./assets/drone.bmp') 0px 0px;
+			url('./assets/drone.bmp') 0px 0px;
 	}
 
 
@@ -51,9 +49,6 @@
 		right: 15%;		
 		bottom: 20;
 	}
-
-
-
 
 
 
