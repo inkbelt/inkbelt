@@ -42,6 +42,12 @@ document.onkeydown = function() {  //    DOWN
 		case 'l': go_right = true; catGo(); spriteGo(); break;
 		case 'i': go_up    = true; catGo(); spriteGo(); break;
 		case 'k': go_down  = true; catGo(); spriteGo(); break;
+
+		case 'a': go_left  = true; catGo(); spriteGo(); break;
+		case 'd': go_right = true; catGo(); spriteGo(); break;
+		case 'w': go_up    = true; catGo(); spriteGo(); break;
+		case 's': go_down  = true; catGo(); spriteGo(); break;
+
 	}
 }
 
@@ -51,11 +57,17 @@ document.onkeyup = function() {    //     UP
 		case 'l': go_right = false; catStop(); spriteStop(); break;
 		case 'i': go_up    = false; catStop(); spriteStop(); break;
 		case 'k': go_down  = false; catStop(); spriteStop(); break;
+
+		case 'a': go_left  = false; catStop(); spriteStop(); break;
+		case 'd': go_right = false; catStop(); spriteStop(); break;
+		case 'w': go_up    = false; catStop(); spriteStop(); break;
+		case 's': go_down  = false; catStop(); spriteStop(); break;
+
 	}
 }
 
 function isStopped() {
-	logIt("Stop check");
+//	logIt("Stop check");
 	if (go_left  == false
 	 && go_right == false 
 	 && go_up    == false 
@@ -79,51 +91,75 @@ function moveCat() {
 }
 
 function catGo() {
-//  console.log(go_left +' '+ go_right +' '+ go_up +' '+ go_down);
-	logIt('Go.');
   if (move_timer) return;
   move_timer = setInterval(moveCat, anim_delay);
 }
 
 function catStop() {
-//	logIt('Cat stop.');
-//	clearInterval(move_timer);
-//  move_timer = null;
+  //	logIt('Cat stop.');
+  //	clearInterval(move_timer);
+  //  move_timer = null;
 }
 
 // Sprite Animation ___________________________________________
 
 let sprite_timer = null;
 
-let   pos_left = 1200;	   // start position for image slicer
+const pos_left = 1200;	   // start position for image slicer
 const min_left = 900;
-let   pos_right = 750;
+const pos_right = 750;
 const min_right = 450;
 
 const blink_left = 300;
 const blink_right = 150;
 
 
-let pos_1 = 1200;
-let position = 1200;
-let min_pos = 150;
+let pos_1 = pos_left;
+let position = pos_left;
+let min_pos = min_left;
 
+let direction = 'left';
 
 const frame_offset = 150;
 
 
+function pointLeft() {
+	pos_1 = pos_left;
+	position = pos_left - 150;
+	min_pos = min_left;
+	direction = 'left';
+	logIt(moving);
+	logIt(direction);
+}
 
-function spriteGo() {       // console.log('Begin animation.');
-//	logIt('Sprite go.');
+function pointRight() {
+	pos_1 = pos_right;
+	position = pos_right - 150;
+	min_pos = min_right;
+	direction = 'right';
+	logIt(moving);
+	logIt(direction);
+}
+
+
+function pointCat() {
+	logIt('POINT');
+	if (!moving && go_left  ) {  pointLeft(); }
+	if (!moving && go_right ) { pointRight(); }
+
+	if (moving && go_left  && direction == 'right' ) {	pointLeft(); }
+	if (moving && go_right && direction == 'left' )  { pointRight(); }
+}
+
+function spriteGo() {
+	pointCat();
 	if (moving == false) {
-		pointCat();
 		moving = true;
 		sprite_timer = setInterval(poseCat, anim_delay);
 	}
 }
 
-function spriteStop() {     // console.log('Stop animation.');
-//	logIt('Sprite stop.');
+function spriteStop() {
 	if (isStopped()) {
 		clearInterval(sprite_timer);
 		sprite_timer = null;
@@ -131,41 +167,12 @@ function spriteStop() {     // console.log('Stop animation.');
 	}
 }
 
-
-function pointCat() {
-	if (go_right == true) {
-		pos_1 = pos_right;
-		position = pos_right - 150;
-		min_pos = min_right;
-
-	} else if (go_left == true) {
-		pos_1 = pos_left;
-		position = pos_left - 150;
-		min_pos = min_left;
-	}
-}
-
-
-function poseCat() {
-
-	cat.style.backgroundPosition = position + 'px 0px';
-
-	if (position <= min_pos) {
-		position = pos_1;												// reset position
-	} else {
-		position = position - frame_offset;			// move position
-	}
-}
-
-
-
-
-function poseCat0() {
+function poseCat() {                      // main sprite engine
 	cat.style.backgroundPosition = position + 'px 0px';
 	if (position <= min_pos) {
-		position = pos_1;												// reset position
+		position = pos_1;									    // reset position
 	} else {
-		position = position - frame_offset;			// move position
+		position = position - frame_offset;		// change position
 	}
 }
 
