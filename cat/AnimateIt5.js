@@ -42,7 +42,7 @@ let go_right = false;
 let go_up    = false;
 let go_down  = false;
 
-const move_delay = 10;
+const move_delay = 20;
 const sprite_delay = 100;
 const move_amt = 3;
 
@@ -94,15 +94,15 @@ function moveCat() {
 	if (go_up    == true) { cat_pos[1] -= move_amt; }
 	if (go_down  == true) { cat_pos[1] += move_amt; }
 
-	if (texNum(cat.style.left) < -250) {
-    cat_pos[0] = width;
-	} else if (texNum(cat.style.left) > width) {
-    cat_pos[0] = -250;
+	if (texNum(cat.style.left) < -350) {
+    cat_pos[0] = width - 150;
+	} else if (texNum(cat.style.left) > width - 150) {
+    cat_pos[0] = -350;
   }
 
   if (texNum(cat.style.top) < -150) {
-    cat_pos[1] = height + 150;
-  } else if (texNum(cat.style.top) > height + 150) {
+    cat_pos[1] = height;
+  } else if (texNum(cat.style.top) > height) {
     cat_pos[1] = -150;
   }
 
