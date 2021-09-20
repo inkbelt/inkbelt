@@ -1,0 +1,15 @@
+
+___Command List___
+
+cd            # change directory
+              # change folder
+
+cd ..         # change directory up one level
+              # change folder up one level
+
+dir           # directory contents
+ls            # show folder contents
+              # list files in folder
+              # dir for windows
+              # ls for mac/linux
+

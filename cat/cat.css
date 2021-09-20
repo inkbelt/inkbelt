@@ -5,11 +5,12 @@
 /*                          */
 
 	body {
+		overflow: hidden;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		background: #689;
-		background-image: linear-gradient(#acd, #578);
+		background-image: linear-gradient(#569, #add);
 	}
 
 	p {
