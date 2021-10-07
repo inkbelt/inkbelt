@@ -29,21 +29,21 @@
     function GoBack() {
       swooshOut.play();
       setTimeout(function() {
-        window.location = 'CoveyQuadrant.html';
+        window.location = './quadrant/index.html';
       }, 400);
     }
 
     function Clicked() {
       clickity.play();
       setTimeout(function() {
-        window.location = './cat';
+        window.location = './cat/index.html';
       }, 300);
     }
 
     function GoForward() {
       swooshIn.play();
       setTimeout(function() {
-        window.location = 'Flashcards8.html';
+        window.location = './flashcards/index.html';
       }, 300);
     }
 
@@ -146,8 +146,8 @@
   </div>
 
   <div class='holder1'>
-    <h2><a href="Flashcards8.html" alt="Math Flashcards">Flashcards</h2>
-    <h2><a href="CoveyQuadrant.html" alt="Time Management Principles">Covey Quadrant</a></h2>
+    <h2><a href="./flashcards">Flashcards</h2>
+    <h2><a href="./quadrant">Covey Quadrant</a></h2>
   </div>
 
   <button class='clicky' onclick='clickity.play()'> Click </button>

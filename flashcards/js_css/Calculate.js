@@ -104,10 +104,3 @@ function Submit() {
 		}, 700);
 	}
 }
-
-function GoBack() {
-  window.location = 'index.html';
-}
-function GoForward() {
-  window.location = 'CoveyQuadrant.html';
-}
