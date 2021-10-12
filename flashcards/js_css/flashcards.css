@@ -2,24 +2,32 @@
 /*    FlashcardsMain.css    */
 /*                          */
 
+* {
+  padding: 0;
+  /*margin: 0;*/
+}
+
 .options {
+  z-index: 9;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background: #93d;
+  justify-content: right;
+  align-items: center;
+  /*background: #93d;*/
   position: fixed;
-  top: 50;
-  width: 120;
-  height: 120;
+  top: 40;
+  width: 210;
+  height: 110;
 }
 
 #operators {
-  right: 100;
+  right: 30;
 }
 
-#difficulties {
+/*#difficulties {
   left: 100;
-}
+}*/
 
 .btn-options {
   background: #eee;
@@ -32,11 +40,11 @@
   box-shadow: 2px 2px 4px #000B;
   border-radius: 8px;
   border: #222;
-  margin: 10px;
+  margin: 6px;
   user-select: none;
 }
 
-#help, #easy {
+#help, #level {
   width: 80;
 }
 

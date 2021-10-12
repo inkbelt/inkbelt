@@ -46,15 +46,15 @@ function NewCard() {
 
 
 function CreateNumbers() {
-	if (easy.self.innerHTML == 'Easy') {
+	if (level.self.innerHTML == 'Easy') {
 	num1 = Math.floor(Math.random() * 6);
 	num2 = Math.floor(Math.random() * 6);
-	} else if (easy_value == 'Medium') {
+	} else if (level.self.innerHTML == 'Medium') {
 	num1 = Math.floor(Math.random() * 9 + 4);
 	num2 = Math.floor(Math.random() * 6 + 3);
 	} else {
-	num1 = Math.floor(Math.random() * 7 + 9);
-	num2 = Math.floor(Math.random() * 7 + 5);
+	num1 = Math.floor(Math.random() * 4 + 12);
+	num2 = Math.floor(Math.random() * 8 + 5);
 	}
 }
 
@@ -84,15 +84,25 @@ function GetAnswer() {
 	if (operand == '&divide;') { DivideIt(); }
 }
 
+function HelpInfo() {
+	if (help.active === true) {
+	feedback_id.innerHTML = num1 + ' '
+			+ operand + ' ' + num2 + ' = '
+			+ answer;
+	}
+}
+
 function ClearFeedback() {
 	feedback = '';
 	feedback_id.innerHTML = feedback;
 	console.log('Feedback cleared.');
+	HelpInfo();
 }
 
 function UpdateFeedback() {
 	feedback_id.innerHTML = feedback;
 	console.log('Feedback updated.');
+	HelpInfo();
 }
 
 function UpdateResponse() {

@@ -27,15 +27,15 @@ let divide = { active: false,
 
 let help = { active: false,
              style: document.getElementById('help').style };
-let easy = { active: 'Easy',
-             style: document.getElementById('easy').style,
-             self: document.getElementById('easy') };
+let level = { //level: 'Easy',
+             //style: document.getElementById('level').style,
+             self: document.getElementById('level') };
 
-let easy_value = easy.self.innerHTML;
+// let level_value = level.self.innerHTML;
 
-let op_objects = [plus, minus, multiply, divide, help];
+let op_objects = [plus, minus, multiply, divide];
 
-let difficulty_objects = [easy];
+// let difficulty_objects = [level];
 
 
 
@@ -51,6 +51,7 @@ function FixButtonColors() {
   op_objects.forEach(function(symbol){
     FixColor(symbol);
   });
+  FixColor(help);
   // difficulty_objects.forEach(function(symbol){
   //   FixColor(symbol);
   // });
@@ -66,19 +67,21 @@ function Help_Go() {
     help.active = true;
     help.style.background = color_on;
   }
+  UpdateFeedback();
+  FocusCursor();
 }
 
-function Easy_Go() {
-  if (easy.self.innerHTML == 'Easy') {
-    easy.self.innerHTML = 'Medium';
-  } else if (easy.self.innerHTML == 'Medium') {
-    easy.self.innerHTML = 'Hard';
+function Level_Go() {
+  if (level.self.innerHTML == 'Easy') {
+    level.self.innerHTML = 'Medium';
+  } else if (level.self.innerHTML == 'Medium') {
+    level.self.innerHTML = 'Hard';
   } else {
-    easy.self.innerHTML = 'Easy';
+    level.self.innerHTML = 'Easy';
   }
-  console.log(easy.self.innerHTML);
+  console.log(level.self.innerHTML);
   NewCard();
-  // document.getElementById('easy').innerHTML = "hello";
+  // document.getElementById('level').innerHTML = "hello";
 }
 
 
@@ -97,10 +100,10 @@ function Op_Go(symbol) {
   NewCard();
 }
 
-function Plus_Go() { Op_Go(plus); }
-function Minus_Go() { Op_Go(minus); }
-function Multiply_Go() { Op_Go(multiply); }
-function Divide_Go() { Op_Go(divide); }
+// function Plus_Go() { Op_Go(plus); }
+// function Minus_Go() { Op_Go(minus); }
+// function Multiply_Go() { Op_Go(multiply); }
+// function Divide_Go() { Op_Go(divide); }
 
 
 function UpdateOperands() {
@@ -122,7 +125,7 @@ function UpdateOperands() {
 
 
 
-function FocusCursor() {
-  document.getElementById('response').focus();
-}
+// function FocusCursor() {
+//   document.getElementById('response').focus();
+// }
 
