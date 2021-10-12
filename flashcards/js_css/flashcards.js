@@ -2,6 +2,15 @@
 //    flashcards.js
 //
 
+const debug = false;
+let long_log = '';
+function LogIt(short_log) {
+	if (debug == true) {
+		long_log = long_log + ' ' + short_log;
+		console.log(long_log);
+	} 
+}
+
 
 let num1;
 let num2;
@@ -28,7 +37,7 @@ NewCard();
 //	FocusCursor();
 
 function NewCard() {
-	console.log('New Card.');
+	LogIt('\n\nNew Card.\n');
   CreateNumbers();
   ChooseOperand();
 	NoNegatives();
@@ -61,7 +70,7 @@ function CreateNumbers() {
 
 function ChooseOperand() {
 	operand = operands[Math.floor(Math.random() * operands.length)];
-	console.log(operand);
+	LogIt(operand);
 }
 
 function NoNegatives() {
@@ -85,7 +94,7 @@ function GetAnswer() {
 }
 
 function HelpInfo() {
-	if (help.active === true) {
+	if (help.active == true) {
 	feedback_id.innerHTML = num1 + ' '
 			+ operand + ' ' + num2 + ' = '
 			+ answer;
@@ -95,14 +104,14 @@ function HelpInfo() {
 function ClearFeedback() {
 	feedback = '';
 	feedback_id.innerHTML = feedback;
-	console.log('Feedback cleared.');
+	LogIt('Feedback cleared.');
 	HelpInfo();
 }
 
 function UpdateFeedback() {
 	feedback_id.innerHTML = feedback;
-	console.log('Feedback updated.');
-	HelpInfo();
+	LogIt('Feedback updated.');
+	setTimeout(HelpInfo, 700);
 }
 
 function UpdateResponse() {
@@ -110,7 +119,7 @@ function UpdateResponse() {
 		thinking = 0;
 		FocusCursor();
 		response_id.value = '';
-		console.log('Response updated.');
+		LogIt('Response updated.');
 	}, 200);
 }
 
@@ -118,29 +127,27 @@ function FocusCursor() {
 	response_id.focus();
 }
 
-document.onkeydown = function() {	 // Enter key submits
-  if (window.event.keyCode == '13') {
-  	if (thinking != 1) { Submit(); }
-  }
-}
+// document.onkeydown = function() {	 // Enter key submits
+//   if (window.event.keyCode == '13') {
+//   	if (thinking != 1) { Submit(); }
+//   }
+// }
 
 function Submit() {
 	thinking = 1;
 	FocusCursor();
 	response = response_id.value;
-	console.log('Submitted. Response:  '+response+'.  Answer:  '+answer+'.');
+	LogIt('Submitted. Response:  '+response+'.  Answer:  '+answer+'.');
 	if (response == answer) {
 		feedback = 'Correct!';
-		console.log('        CORRECT');
+		LogIt(' CORRECT ');
 		UpdateFeedback();
 		NewCard();
 	} else {
 		feedback = 'Try again.';
-		console.log('       INCORRECT');
+		LogIt(' INCORRECT ');
 		UpdateFeedback();
 		UpdateResponse();
-		setTimeout(function() {
-			ClearFeedback();
-		}, 700);
+		setTimeout(ClearFeedback, 700);
 	}
 }

@@ -1,5 +1,5 @@
 //
-//    button_test.js
+//    buttons.js
 //
 
 
@@ -59,7 +59,7 @@ function FixButtonColors() {
 
 
 function Help_Go() {
-  console.log('help go');
+  LogIt('help go');
   if (help.active == true) {
     help.active = false;
     help.style.background = color_off;
@@ -79,7 +79,7 @@ function Level_Go() {
   } else {
     level.self.innerHTML = 'Easy';
   }
-  console.log(level.self.innerHTML);
+  LogIt(level.self.innerHTML);
   NewCard();
   // document.getElementById('level').innerHTML = "hello";
 }
@@ -95,7 +95,7 @@ function Op_Go(symbol) {
     symbol.active = true;
     symbol.style.background = color_on;
   }
-  console.log(symbol);
+  LogIt(symbol);
   UpdateOperands();
   NewCard();
 }
@@ -112,7 +112,7 @@ function UpdateOperands() {
     if (symbol.active == true) {
       operands.push(symbol.content);
     }
-    console.log(operands.length)
+    LogIt(operands.length)
   });
   // if (operands.length == 0) {
   //   plus.active = true;
