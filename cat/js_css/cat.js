@@ -1,6 +1,6 @@
 //
 //
-//    AnimateIt5.js   version 5
+//    cat.js   (version 6)
 //
 //
 
