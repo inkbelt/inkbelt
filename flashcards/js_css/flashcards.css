@@ -9,9 +9,16 @@
   background: #93d;
   position: fixed;
   top: 50;
-  right: 100;
   width: 120;
   height: 120;
+}
+
+#operators {
+  right: 100;
+}
+
+#difficulties {
+  left: 100;
 }
 
 .btn-options {
@@ -29,6 +36,9 @@
   user-select: none;
 }
 
+#help, #easy {
+  width: 80;
+}
 
 
 body {
@@ -95,8 +105,8 @@ body {
 }
 input {
 	background: #ddd;
-	width: 80;
-	height: 80;
+	width: 120;
+	height: 90;
 	border: 1px solid #777;
 	text-align: center;
 }

@@ -3,21 +3,25 @@
 //
 
 
-
 let num1;
 let num2;
 let num3;
 let num4;
+let num1_id = document.getElementById('num1');
+let num2_id = document.getElementById('num2');
 let feedback = '';
 let operand;
-let operands = [];
+let operand_id = document.getElementById('operand');
+let operands = ['+'];
 let answer;
 let response;
+let response_id = document.getElementById('response');
 let thinking = 0;
+let feedback_id = document.getElementById('feedback');
 
-let level = 'hard';  // 'easy' 'medium' 'hard'
+// let level = 'easy';  // 'easy' 'medium' 'hard'
 
-operands = ['+', '-', 'x', '&divide;'];
+// operands = ['+'];
 
 
 NewCard();
@@ -25,15 +29,14 @@ NewCard();
 
 function NewCard() {
 	console.log('New Card.');
-	num1 = Math.floor(Math.random() * 9 + 4);
-	num2 = Math.floor(Math.random() * 6 + 3);
-	ChooseOperand();
+  CreateNumbers();
+  ChooseOperand();
 	NoNegatives();
 	GetAnswer();
 	response = 0;
-	document.getElementById('num1').innerHTML = num1;
-	document.getElementById('operand').innerHTML = operand;
-	document.getElementById('num2').innerHTML = num2;
+	num1_id.innerHTML = num1;
+	operand_id.innerHTML = operand;
+	num2_id.innerHTML = num2;
 	UpdateResponse();
 	setTimeout(function() { ClearFeedback(); }, 700);
 }
@@ -41,6 +44,19 @@ function NewCard() {
 
 //const randomElement = array[Math.floor(Math.random() * array.length)];
 
+
+function CreateNumbers() {
+	if (easy.self.innerHTML == 'Easy') {
+	num1 = Math.floor(Math.random() * 6);
+	num2 = Math.floor(Math.random() * 6);
+	} else if (easy_value == 'Medium') {
+	num1 = Math.floor(Math.random() * 9 + 4);
+	num2 = Math.floor(Math.random() * 6 + 3);
+	} else {
+	num1 = Math.floor(Math.random() * 7 + 9);
+	num2 = Math.floor(Math.random() * 7 + 5);
+	}
+}
 
 
 function ChooseOperand() {
@@ -70,12 +86,12 @@ function GetAnswer() {
 
 function ClearFeedback() {
 	feedback = '';
-	document.getElementById('feedback').innerHTML = feedback;
+	feedback_id.innerHTML = feedback;
 	console.log('Feedback cleared.');
 }
 
 function UpdateFeedback() {
-	document.getElementById('feedback').innerHTML = feedback;
+	feedback_id.innerHTML = feedback;
 	console.log('Feedback updated.');
 }
 
@@ -83,13 +99,13 @@ function UpdateResponse() {
 	setTimeout(function() {
 		thinking = 0;
 		FocusCursor();
-		document.getElementById('response').value = '';
+		response_id.value = '';
 		console.log('Response updated.');
 	}, 200);
 }
 
 function FocusCursor() {
-	document.getElementById('response').focus();
+	response_id.focus();
 }
 
 document.onkeydown = function() {	 // Enter key submits
@@ -101,11 +117,11 @@ document.onkeydown = function() {	 // Enter key submits
 function Submit() {
 	thinking = 1;
 	FocusCursor();
-	response = document.getElementById('response').value;
+	response = response_id.value;
 	console.log('Submitted. Response:  '+response+'.  Answer:  '+answer+'.');
 	if (response == answer) {
 		feedback = 'Correct!';
-		console.log('       CORRECT');
+		console.log('        CORRECT');
 		UpdateFeedback();
 		NewCard();
 	} else {

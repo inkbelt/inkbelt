@@ -7,9 +7,16 @@
   background: #93d;
   position: fixed;
   top: 50;
-  right: 100;
   width: 120;
   height: 120;
+}
+
+#operators {
+  right: 100;
+}
+
+#difficulties {
+  left: 100;
 }
 
 .btn-options {
@@ -26,3 +33,10 @@
   margin: 10px;
   user-select: none;
 }
+
+#help, #easy {
+  width: 80;
+}
+
+
+
