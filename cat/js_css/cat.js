@@ -12,10 +12,10 @@ log(height);
 let cat_pos = [200, 100];
 let is_moving = false;
 
-let dir = {left: false,
-          right: false,
-          up: false,
-          down: false };
+let dir = { left: false,
+            right: false,
+            up: false,
+            down: false };
 // let go_left  = false;
 // let go_right = false;
 // let go_up    = false;
@@ -44,6 +44,9 @@ function MoveCat() {
 	if (dir.up    == true) { cat_pos[1] -= move_amt; }
 	if (dir.down  == true) { cat_pos[1] += move_amt; }
 
+
+// ----- let vh_pixels = Math.round(window.innerHeight / 100)
+
 	// if (TexNum(cat.style.left) < -350) {
  //    cat_pos[0] = width - 150;
 	// } else if (TexNum(cat.style.left) > width - 150) {
@@ -58,7 +61,7 @@ function MoveCat() {
 
   cat.style.left = cat_pos[0];
   cat.style.top  = cat_pos[1];
-  log('Cat moved.')
+//  log('Cat moved.')
 }
 
 
@@ -69,8 +72,11 @@ function CatGo() {
 }
 
 function CatStop() {
-  clearInterval(move_timer);
-  move_timer = null;
+  if (isStopped()) {
+    clearInterval(move_timer);
+    move_timer = null;
+  }
+//  log(isStopped());
   // log(width);
   // log(height);
   // log(cat.style.left);

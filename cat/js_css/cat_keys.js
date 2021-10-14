@@ -6,47 +6,66 @@
 
 document.onkeydown = function() {  //   KEY DOWN
 	switch(window.event.key) {
-		case 'j': DirCatGo(dir.left); break;
-		case 'l': DirCatGo(dir.right); break;
-		case 'i': DirCatGo(dir.up); break;
-		case 'k': DirCatGo(dir.down); break;
+		case 'a': DirCatGo('left'); break; //left
+		case 'd': DirCatGo('right'); break; //right
+		case 'w': DirCatGo('up'); break; //up
+		case 's': DirCatGo('down'); break; //down
 
-		case 'a': DirCatGo(dir.left); break;
-		case 'd': DirCatGo(dir.right); break;
-		case 'w': DirCatGo(dir.up); break;
-		case 's': DirCatGo(dir.down); break;
+		case 'j': DirCatGo('left'); break; //left
+		case 'l': DirCatGo('right'); break; //right
+		case 'i': DirCatGo('up'); break; //up
+		case 'k': DirCatGo('down'); break; //down
+
+    case 'ArrowLeft': DirCatGo('left'); break; //left
+    case 'ArrowRight': DirCatGo('right'); break; //right
+    case 'ArrowUp': DirCatGo('up'); break; //up
+    case 'ArrowDown': DirCatGo('down'); break; //down
+
 	}
 }
 
 document.onkeyup = function() {    //    KEY UP
 	switch(window.event.key) {
-		case 'j': DirCatStop(dir.left); break;
-		case 'l': DirCatStop(dir.right); break;
-		case 'i': DirCatStop(dir.up); break;
-		case 'k': DirCatStop(dir.down); break;
+		case 'a': DirCatStop('left'); break; //left
+		case 'd': DirCatStop('right'); break; //right
+		case 'w': DirCatStop('up'); break; //up
+    case 's': DirCatStop('down'); break; //down
 
-		case 'a': DirCatStop(dir.left); break;
-		case 'd': DirCatStop(dir.right); break;
-		case 'w': DirCatStop(dir.up); break;
-    case 's': DirCatStop(dir.down); break;
+		case 'j': DirCatStop('left'); break; //left
+		case 'l': DirCatStop('right'); break; //right
+		case 'i': DirCatStop('up'); break; //up
+		case 'k': DirCatStop('down'); break; //down
+
+    case 'ArrowLeft': DirCatStop('left'); break; //left
+    case 'ArrowRight': DirCatStop('right'); break; //right
+    case 'ArrowUp': DirCatStop('up'); break; //up
+    case 'ArrowDown': DirCatStop('down'); break; //down
 	}
 }
 
 
-function DirCatGo(go_direction) {
-  go_direction = true;
+function DirCatGo(direction) {
+  switch(direction) {
+    case 'left': dir.left = true; break;
+    case 'right': dir.right = true; break;
+    case 'up': dir.up = true; break;
+    case 'down': dir.down = true; break;
+  }
   CatGo();
   SpriteGo();
-  log(dir.left);
-  log(is_moving);
+  log(direction);
 }
 
-function DirCatStop(go_direction) {
-  go_direction = false;
+function DirCatStop(direction) {
+  switch(direction) {
+    case 'left': dir.left = false; break;
+    case 'right': dir.right = false; break;
+    case 'up': dir.up = false; break;
+    case 'down': dir.down = false; break;
+  }
   CatStop();
   SpriteStop();
-  log(go_direction);
-  log(is_moving);
+  log(direction);
 }
 
 // function GoLeft() {
