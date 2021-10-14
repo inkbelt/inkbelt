@@ -1,42 +1,35 @@
-<!DOCTYPE.html>
-							<!--                      -->
-							<!--      Cat.html        -->
-							<!--                      -->
+<!DOCTYPE.html>       <!--                      -->
+      		        		<!--      Cat.html        -->
+          				    <!--                      -->
 <html>
-	<head>
-		<title> Cat </title>
-		<link rel="stylesheet" href="./js_css/cat.css">
-	</head>
+  <head>
+    <title> Cat </title>
+    <link rel="stylesheet" href="./js_css/cat.css">
+  </head>
 
 
-	<body>												<!-- BODY -->
+  <body>
+    <p id='cat_sprite'></p>
 
+    <script src="./js_css/cat_helpers.js"></script>
+    <script src="./js_css/cat.js"></script>
+    <script src="./js_css/screen_edges.js"></script>
+    <script src="./js_css/cat_keys.js"></script>
+    <!-- <script src="./js_css/key_finder.js"></script> -->
+    <script src="./js_css/cat_sprite.js"></script>
 
-<!-- 	<div class='holder1'>
-  </div> -->
-		<p id='cat_sprite'>
-<!-- 			onmouseover='spriteGo()'
-			onmouseout='spriteStop()' -->
-		</p>
+    <script type="text/javascript">
+      function GoBack() {
+        window.location = '../flashcards/index.html';
+      }
+      function GoForward() {
+        window.location = '../quadrant/index.html';
+      }
+    </script>
 
-	  <script src="./js_css/cat_helpers.js"></script>
-	  <script src="./js_css/cat.js"></script>
-	  <script src="./js_css/cat_keys.js"></script>
-	  <!-- <script src="./js_css/key_finder.js"></script> -->
-	  <script src="./js_css/cat_sprite.js"></script>
+    <button class='nav1' onclick='GoBack()'> &#8678; </button>
+    <button class='nav2' onclick='GoForward()'> &#8680; </button>
 
-		<script type="text/javascript">
-			function GoBack() {
-			  window.location = '../flashcards/index.html';
-			}
-			function GoForward() {
-			  window.location = '../quadrant/index.html';
-			}
-		</script>
-
-	  <button class='nav1' onclick='GoBack()'> &#8678; </button>
-	  <button class='nav2' onclick='GoForward()'> &#8680; </button>
-
-	</body>
+  </body>
 
 </html>
