@@ -15,7 +15,7 @@
 
 	#cat_sprite {
 		position: absolute;
-		width: 150px;
+		width: 1200px; /* 150px;*/
 		height: 150px;
 		left: 200px;
 		top: 100px;

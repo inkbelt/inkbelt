@@ -38,6 +38,7 @@ function MoveCat() {
   if (dir.down  == true) { cat_pos[1] += move_amt; }
 
   CheckEdges();
+  ZScale()
   cat.style.left = cat_pos[0];
   cat.style.top  = cat_pos[1];
 //  log('Cat moved.')

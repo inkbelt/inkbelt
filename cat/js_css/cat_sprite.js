@@ -61,7 +61,7 @@ function PoseCat() {                      // main sprite engine
 function SpriteGo() {                     // call poseCat() in timer
   if (!is_moving) {
     is_moving = true;
-    sprite_timer = setInterval(PoseCat, sprite_delay);
+//    sprite_timer = setInterval(PoseCat, sprite_delay);
   }
 }
 
