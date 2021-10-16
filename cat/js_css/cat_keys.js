@@ -7,9 +7,13 @@
 // Key Bindings _____________________________________________
 
 document.onkeydown = function() {  //   KEY DOWN
+  let keyDirections = {'a': 'left', 'd': 'right'}
+  let direction = keyDirections[window.event.key]
+  DirCatGo(direction)
+
   switch(window.event.key) {
-    case 'a': DirCatGo('left'); break; //left
-    case 'd': DirCatGo('right'); break; //right
+    // case 'a': DirCatGo('left'); break; //left
+    // case 'd': DirCatGo('right'); break; //right
     case 'w': DirCatGo('up'); break; //up
     case 's': DirCatGo('down'); break; //down
 
@@ -47,15 +51,16 @@ document.onkeyup = function() {    //    KEY UP
 }
 
 function DirCatGo(direction) {
-  switch(direction) {
-    case 'left': dir.left = true; break;
-    case 'right': dir.right = true; break;
-    case 'up': dir.up = true; break;
-    case 'down': dir.down = true; break;
-  }
+  dir[direction] = true;
+  // switch(direction) {
+  //   case 'left': dir.left = true; break;
+  //   case 'right': dir.right = true; break;
+  //   case 'up': dir.up = true; break;
+  //   case 'down': dir.down = true; break;
+  // }
   CatGo();
   SpriteGo();
-  log(direction);
+  // log(direction);
 }
 
 function DirCatStop(direction) {
