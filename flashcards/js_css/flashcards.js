@@ -3,11 +3,11 @@
 //
 
 const debug = false;
-let long_log = '';
-function LogIt(short_log) {
+let longLog = '';
+function log(shortLog) {
 	if (debug == true) {
-		long_log = long_log + ' ' + short_log;
-		console.log(long_log);
+		longLog = longLog + ' ' + shortLog;
+		console.log(longLog);
 	} 
 }
 
@@ -16,45 +16,45 @@ let num1;
 let num2;
 let num3;
 let num4;
-let num1_id = document.getElementById('num1');
-let num2_id = document.getElementById('num2');
+let num1ID = document.getElementById('num1');
+let num2ID = document.getElementById('num2');
 let feedback = '';
 let operand;
-let operand_id = document.getElementById('operand');
+let operandID = document.getElementById('operand');
 let operands = ['+'];
 let answer;
 let response;
-let response_id = document.getElementById('response');
+let responseID = document.getElementById('response');
 let thinking = 0;
-let feedback_id = document.getElementById('feedback');
+let feedbackID = document.getElementById('feedback');
 
 // let level = 'easy';  // 'easy' 'medium' 'hard'
 
 // operands = ['+'];
 
 
-NewCard();
+newCard();
 //	FocusCursor();
 
-function NewCard() {
-	LogIt('\n\nNew Card.\n');
-  CreateNumbers();
-  ChooseOperand();
-	NoNegatives();
-	GetAnswer();
+function newCard() {
+	log('\n\nNew Card.\n');
+  createNumbers();
+  chooseOperand();
+	noNegatives();
+	getAnswer();
 	response = 0;
-	num1_id.innerHTML = num1;
-	operand_id.innerHTML = operand;
-	num2_id.innerHTML = num2;
-	UpdateResponse();
-	setTimeout(function() { ClearFeedback(); }, 700);
+	num1ID.innerHTML = num1;
+	operandID.innerHTML = operand;
+	num2ID.innerHTML = num2;
+	updateResponse();
+	setTimeout(function() { clearFeedback(); }, 700);
 }
 
 
 //const randomElement = array[Math.floor(Math.random() * array.length)];
 
 
-function CreateNumbers() {
+function createNumbers() {
 	if (level.self.innerHTML == 'Easy') {
 	num1 = Math.floor(Math.random() * 6);
 	num2 = Math.floor(Math.random() * 6);
@@ -68,63 +68,65 @@ function CreateNumbers() {
 }
 
 
-function ChooseOperand() {
+function chooseOperand() {
 	operand = operands[Math.floor(Math.random() * operands.length)];
-	LogIt(operand);
+	log(operand);
 }
 
-function NoNegatives() {
-	if (operand == '-' && num2 > num1) {
-		num3 = num1; num1 = num2; num2 = num3; // swap numbers
+function noNegatives() {
+	if (negatives.active == false) {
+		if (operand == '-' && num2 > num1) {
+			num3 = num1; num1 = num2; num2 = num3; // swap numbers
+		}
 	}
 }
 
-function DivideIt() {
+function divideIt() {
 	num3 = num1 * num2;
 	answer = num1;
 	num1 = num3;
 	//return num4;
 }
 
-function GetAnswer() {
+function getAnswer() {
 	if (operand == '+') {	answer = num1 + num2; }
 	if (operand == '-') {	answer = num1 - num2; }
 	if (operand == 'x') {	answer = num1 * num2; }
 	if (operand == '&divide;') { DivideIt(); }
 }
 
-function HelpInfo() {
+function helpInfo() {
 	if (help.active == true) {
-	feedback_id.innerHTML = num1 + ' '
+	feedbackID.innerHTML = num1 + ' '
 			+ operand + ' ' + num2 + ' = '
 			+ answer;
 	}
 }
 
-function ClearFeedback() {
+function clearFeedback() {
 	feedback = '';
-	feedback_id.innerHTML = feedback;
-	LogIt('Feedback cleared.');
-	HelpInfo();
+	feedbackID.innerHTML = feedback;
+	log('Feedback cleared.');
+	helpInfo();
 }
 
-function UpdateFeedback() {
-	feedback_id.innerHTML = feedback;
-	LogIt('Feedback updated.');
+function updateFeedback() {
+	feedbackID.innerHTML = feedback;
+	log('Feedback updated.');
 	setTimeout(HelpInfo, 700);
 }
 
-function UpdateResponse() {
+function updateResponse() {
 	setTimeout(function() {
 		thinking = 0;
-		FocusCursor();
-		response_id.value = '';
-		LogIt('Response updated.');
+		focusCursor();
+		responseID.value = '';
+		log('Response updated.');
 	}, 200);
 }
 
-function FocusCursor() {
-	response_id.focus();
+function focusCursor() {
+	responseID.focus();
 }
 
 // document.onkeydown = function() {	 // Enter key submits
@@ -133,21 +135,21 @@ function FocusCursor() {
 //   }
 // }
 
-function Submit() {
+function submit() {
 	thinking = 1;
-	FocusCursor();
-	response = response_id.value;
-	LogIt('Submitted. Response:  '+response+'.  Answer:  '+answer+'.');
+	focusCursor();
+	response = responseID.value;
+	log('Submitted. Response:  '+response+'.  Answer:  '+answer+'.');
 	if (response == answer) {
 		feedback = 'Correct!';
-		LogIt(' CORRECT ');
-		UpdateFeedback();
-		NewCard();
+		log(' CORRECT ');
+		updateFeedback();
+		newCard();
 	} else {
 		feedback = 'Try again.';
-		LogIt(' INCORRECT ');
-		UpdateFeedback();
-		UpdateResponse();
-		setTimeout(ClearFeedback, 700);
+		log(' INCORRECT ');
+		updateFeedback();
+		updateResponse();
+		setTimeout(clearFeedback, 700);
 	}
 }

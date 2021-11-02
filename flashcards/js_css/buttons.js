@@ -31,6 +31,9 @@ let level = { //level: 'Easy',
              //style: document.getElementById('level').style,
              self: document.getElementById('level') };
 
+let negatives = { active: false,
+                  style: document.getElementById('negatives').style };
+
 // let level_value = level.self.innerHTML;
 
 let op_objects = [plus, minus, multiply, divide];
@@ -52,9 +55,7 @@ function FixButtonColors() {
     FixColor(symbol);
   });
   FixColor(help);
-  // difficulty_objects.forEach(function(symbol){
-  //   FixColor(symbol);
-  // });
+  FixColor(negatives);
 }
 
 
@@ -99,6 +100,20 @@ function Op_Go(symbol) {
   UpdateOperands();
   NewCard();
 }
+
+function negGo() {
+  LogIt('neg go');
+  if (negatives.active == true) {
+    negatives.active = false;
+    negatives.style.background = color_off;
+  } else {
+    negatives.active = true;
+    negatives.style.background = color_on;
+  }
+  UpdateFeedback();
+  FocusCursor();
+}
+
 
 // function Plus_Go() { Op_Go(plus); }
 // function Minus_Go() { Op_Go(minus); }
