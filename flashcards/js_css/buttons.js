@@ -16,7 +16,7 @@ const plus = { active: true,
              content: '+',
              style: document.getElementById('plus').style };
 const minus = { active: false, 
-              content: '-',
+              content: '–',
               style: document.getElementById('minus').style };
 const multiply = { active: false, 
               content: 'x',
@@ -106,12 +106,15 @@ function negGo() {
   if (negatives.active == true) {
     negatives.active = false;
     negatives.style.background = colorOff;
+    neggy = 0;
   } else {
     negatives.active = true;
     negatives.style.background = colorOn;
+    neggy = 1;
   }
   updateFeedback();
   focusCursor();
+  newCard();
 }
 
 

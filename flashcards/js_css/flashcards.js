@@ -2,7 +2,7 @@
 //    flashcards.js
 //
 
-const debug = true;
+const debug = 0;
 let longLog = '';
 function log(shortLog) {
 	if (debug == true) {
@@ -12,20 +12,21 @@ function log(shortLog) {
 }
 
 
-let num1;
-let num2;
-let num3;
-let num4;
+let num1 = 1;
+let num2 = 1;
+let num3 = 1;
+let neggy = 0;
+// let num4;
 let num1ID = document.getElementById('num1');
 let num2ID = document.getElementById('num2');
 let feedback = '';
-let operand;
+let operand = '+';
 let operandID = document.getElementById('operand');
 let operands = ['+'];
-let answer;
-let response;
+let answer = 1;
+let response = 1;
 let responseID = document.getElementById('response');
-let thinking = 0;
+let thinking = false;
 let feedbackID = document.getElementById('feedback');
 
 // let level = 'easy';  // 'easy' 'medium' 'hard'
@@ -45,39 +46,42 @@ function newCard() {
 	response = 0;
 	num1ID.innerHTML = num1;
 	operandID.innerHTML = operand;
+	num2Parentheses();
 	num2ID.innerHTML = num2;
 	updateResponse();
-	setTimeout(function() { clearFeedback(); }, 700);
+	setTimeout(clearFeedback, 300);
+}
+
+
+function createNumbers() {
+
+	if (level.self.innerHTML === 'Easy') {
+	num1 = Math.floor(Math.random() * (6 + 6*neggy) - 6*neggy);
+	num2 = Math.floor(Math.random() * (6 + 6*neggy) - 6*neggy);
+	} else if (level.self.innerHTML === 'Medium') {
+	num1 = Math.floor(Math.random() * (9 + 12*neggy) + 4 - 12*neggy);
+	num2 = Math.floor(Math.random() * (6 + 12*neggy) + 3 - 12*neggy);
+	} else {
+	num1 = Math.floor(Math.random() * (4 + 15*neggy) + 12 - 15*neggy);
+	num2 = Math.floor(Math.random() * (8 + 15*neggy) + 5 - 15*neggy);
+	}
+}
+
+function num2Parentheses() {
+	if (num2 < 0) {	num2 = '(' + num2 + ')'; }
 }
 
 
 //const randomElement = array[Math.floor(Math.random() * array.length)];
-
-
-function createNumbers() {
-	if (level.self.innerHTML == 'Easy') {
-	num1 = Math.floor(Math.random() * 6);
-	num2 = Math.floor(Math.random() * 6);
-	} else if (level.self.innerHTML == 'Medium') {
-	num1 = Math.floor(Math.random() * 9 + 4);
-	num2 = Math.floor(Math.random() * 6 + 3);
-	} else {
-	num1 = Math.floor(Math.random() * 4 + 12);
-	num2 = Math.floor(Math.random() * 8 + 5);
-	}
-}
-
-
 function chooseOperand() {
 	operand = operands[Math.floor(Math.random() * operands.length)];
 	log(operand);
 }
 
 function noNegatives() {
-	if (negatives.active == false) {
-		if (operand == '-' && num2 > num1) {
-			num3 = num1; num1 = num2; num2 = num3; // swap numbers
-		}
+	if (negatives.active == false &&
+      operand == '–' && num2 > num1) {
+			  num3 = num1; num1 = num2; num2 = num3; // swap numbers
 	}
 }
 
@@ -85,12 +89,11 @@ function divideIt() {
 	num3 = num1 * num2;
 	answer = num1;
 	num1 = num3;
-	//return num4;
 }
 
 function getAnswer() {
 	if (operand == '+') {	answer = num1 + num2; }
-	if (operand == '-') {	answer = num1 - num2; }
+	if (operand == '–') {	answer = num1 - num2; }
 	if (operand == 'x') {	answer = num1 * num2; }
 	if (operand == '&divide;') { divideIt(); }
 }
@@ -113,16 +116,16 @@ function clearFeedback() {
 function updateFeedback() {
 	feedbackID.innerHTML = feedback;
 	log('Feedback updated.');
-	setTimeout(helpInfo, 700);
+	setTimeout(helpInfo, 300);
 }
 
 function updateResponse() {
 	setTimeout(function() {
-		thinking = 0;
+		thinking = false;
 		focusCursor();
 		responseID.value = '';
 		log('Response updated.');
-	}, 200);
+	}, 150);
 }
 
 function focusCursor() {
@@ -136,7 +139,7 @@ function focusCursor() {
 // }
 
 function submit() {
-	thinking = 1;
+	thinking = true;
 	focusCursor();
 	response = responseID.value;
 	log('Submitted. Response:  '+response+'.  Answer:  '+answer+'.');
@@ -150,6 +153,6 @@ function submit() {
 		log(' INCORRECT ');
 		updateFeedback();
 		updateResponse();
-		setTimeout(clearFeedback, 700);
+		setTimeout(clearFeedback, 500);
 	}
 }

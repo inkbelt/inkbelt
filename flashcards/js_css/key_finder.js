@@ -5,6 +5,6 @@
 // Key Finder _____________________________________________
 
 document.onkeydown = function() {  //   KEY DOWN
-  log(window.event.key)
+  console.log(window.event.keyCode)
 }
 

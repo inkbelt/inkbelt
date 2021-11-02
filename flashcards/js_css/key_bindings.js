@@ -1,5 +1,5 @@
 //
-//    keyboard_shortcuts.js
+//    key_bindings.js
 //
 const keyList = { 13: 'enter', 72: 'help', 76: 'level', 107: 'plus',
   109: 'minus', 106: 'multiply', 111: 'divide', 8: 'backspace',
@@ -13,6 +13,7 @@ function keyBindings() {
   if (window.event.keyCode == 13) { enterKey(); }
   if (window.event.keyCode == 72) { helpGo(); event.preventDefault(); }        //  H
   if (window.event.keyCode == 76) { levelGo(); event.preventDefault(); }       //  L
+  if (window.event.keyCode == 78) { newCard(); event.preventDefault(); }       //  N
   // if (window.event.keyCode == 107) { Op_Go(plus); event.preventDefault(); }     //  +
   // if (window.event.keyCode == 109) { Op_Go(minus); event.preventDefault(); }    //  -
   // if (window.event.keyCode == 106) { Op_Go(multiply); event.preventDefault(); } //  *
@@ -26,7 +27,7 @@ function keyBindings() {
 }
 
 function enterKey() {
-  if (thinking != 1) { submit(); }
+  if (!thinking) { submit(); }
 }
 
 function disabled() {
