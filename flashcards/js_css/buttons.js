@@ -4,75 +4,75 @@
 
 
 
-window.addEventListener("load", FixButtonColors);
+window.addEventListener("load", fixButtonColors);
 
 
-const color_on = '#eee';
-const color_off = '#aaa';
+const colorOn = '#eee';
+const colorOff = '#aaa';
 
 
 
-let plus = { active: true,
+const plus = { active: true,
              content: '+',
              style: document.getElementById('plus').style };
-let minus = { active: false, 
+const minus = { active: false, 
               content: '-',
               style: document.getElementById('minus').style };
-let multiply = { active: false, 
+const multiply = { active: false, 
               content: 'x',
               style: document.getElementById('multiply').style };
-let divide = { active: false, 
+const divide = { active: false, 
               content: '&divide;',
               style: document.getElementById('divide').style };
 
-let help = { active: false,
+const help = { active: false,
              style: document.getElementById('help').style };
-let level = { //level: 'Easy',
+const level = { //level: 'Easy',
              //style: document.getElementById('level').style,
              self: document.getElementById('level') };
 
-let negatives = { active: false,
+const negatives = { active: false,
                   style: document.getElementById('negatives').style };
 
 // let level_value = level.self.innerHTML;
 
-let op_objects = [plus, minus, multiply, divide];
+const opObjects = [plus, minus, multiply, divide];
 
 // let difficulty_objects = [level];
 
 
 
-function FixColor(symbol) {
+function fixColor(symbol) {
   if (symbol.active == true) {
-    symbol.style.background = color_on;
+    symbol.style.background = colorOn;
   } else {
-    symbol.style.background = color_off;
+    symbol.style.background = colorOff;
   }
 }
 
-function FixButtonColors() {
-  op_objects.forEach(function(symbol){
-    FixColor(symbol);
+function fixButtonColors() {
+  opObjects.forEach(function(symbol){
+    fixColor(symbol);
   });
-  FixColor(help);
-  FixColor(negatives);
+  fixColor(help);
+  fixColor(negatives);
 }
 
 
-function Help_Go() {
-  LogIt('help go');
+function helpGo() {
+  log('help go');
   if (help.active == true) {
     help.active = false;
-    help.style.background = color_off;
+    help.style.background = colorOff;
   } else {
     help.active = true;
-    help.style.background = color_on;
+    help.style.background = colorOn;
   }
-  UpdateFeedback();
-  FocusCursor();
+  updateFeedback();
+  focusCursor();
 }
 
-function Level_Go() {
+function levelGo() {
   if (level.self.innerHTML == 'Easy') {
     level.self.innerHTML = 'Medium';
   } else if (level.self.innerHTML == 'Medium') {
@@ -80,67 +80,53 @@ function Level_Go() {
   } else {
     level.self.innerHTML = 'Easy';
   }
-  LogIt(level.self.innerHTML);
-  NewCard();
+  log(level.self.innerHTML);
+  newCard();
   // document.getElementById('level').innerHTML = "hello";
 }
 
 
-function Op_Go(symbol) {
-  FocusCursor();
-  if (symbol.active == true) {
-    if (operands.length == 1) { return; }
+function opGo(symbol) {
+  focusCursor();
+  if (symbol.active === true) {
+    if (operands.length === 1) { return; }
     symbol.active = false;
-    symbol.style.background = color_off;
+    symbol.style.background = colorOff;
   } else {
     symbol.active = true;
-    symbol.style.background = color_on;
+    symbol.style.background = colorOn;
   }
-  LogIt(symbol);
-  UpdateOperands();
-  NewCard();
+  log(symbol);
+  updateOperands();
+  newCard();
 }
 
 function negGo() {
-  LogIt('neg go');
+  log('neg go');
   if (negatives.active == true) {
     negatives.active = false;
-    negatives.style.background = color_off;
+    negatives.style.background = colorOff;
   } else {
     negatives.active = true;
-    negatives.style.background = color_on;
+    negatives.style.background = colorOn;
   }
-  UpdateFeedback();
-  FocusCursor();
+  updateFeedback();
+  focusCursor();
 }
 
 
-// function Plus_Go() { Op_Go(plus); }
-// function Minus_Go() { Op_Go(minus); }
-// function Multiply_Go() { Op_Go(multiply); }
-// function Divide_Go() { Op_Go(divide); }
-
-
-function UpdateOperands() {
+function updateOperands() {
   operands = [];
-  op_objects.forEach(function(symbol){
+  opObjects.forEach(function(symbol){
     if (symbol.active == true) {
       operands.push(symbol.content);
     }
-    LogIt(operands.length)
+    log(operands.length)
   });
-  // if (operands.length == 0) {
-  //   plus.active = true;
-  //   plus.style.background = color_on;
-  //   operands = ['+'];
-  // }
+
 }
 
 
 
 
-
-// function FocusCursor() {
-//   document.getElementById('response').focus();
-// }
 

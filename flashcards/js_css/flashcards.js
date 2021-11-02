@@ -2,7 +2,7 @@
 //    flashcards.js
 //
 
-const debug = false;
+const debug = true;
 let longLog = '';
 function log(shortLog) {
 	if (debug == true) {
@@ -92,7 +92,7 @@ function getAnswer() {
 	if (operand == '+') {	answer = num1 + num2; }
 	if (operand == '-') {	answer = num1 - num2; }
 	if (operand == 'x') {	answer = num1 * num2; }
-	if (operand == '&divide;') { DivideIt(); }
+	if (operand == '&divide;') { divideIt(); }
 }
 
 function helpInfo() {
@@ -113,7 +113,7 @@ function clearFeedback() {
 function updateFeedback() {
 	feedbackID.innerHTML = feedback;
 	log('Feedback updated.');
-	setTimeout(HelpInfo, 700);
+	setTimeout(helpInfo, 700);
 }
 
 function updateResponse() {
