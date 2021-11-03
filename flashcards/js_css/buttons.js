@@ -16,7 +16,7 @@ const plus = { active: true,
              content: '+',
              style: document.getElementById('plus').style };
 const minus = { active: false, 
-              content: '–',
+              content: '&ndash;',
               style: document.getElementById('minus').style };
 const multiply = { active: false, 
               content: 'x',

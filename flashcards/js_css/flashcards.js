@@ -80,7 +80,7 @@ function chooseOperand() {
 
 function noNegatives() {
 	if (negatives.active == false &&
-      operand == '–' && num2 > num1) {
+      operand == '&ndash;' && num2 > num1) {
 			  num3 = num1; num1 = num2; num2 = num3; // swap numbers
 	}
 }
@@ -88,12 +88,13 @@ function noNegatives() {
 function divideIt() {
 	num3 = num1 * num2;
 	answer = num1;
-	num1 = num3;
+	num1 = num3;				// WHAT ABOUT ZERO?!!!
+	if (num2 === 0) {answer = 0;}
 }
 
 function getAnswer() {
 	if (operand == '+') {	answer = num1 + num2; }
-	if (operand == '–') {	answer = num1 - num2; }
+	if (operand == '&ndash;') {	answer = num1 - num2; }
 	if (operand == 'x') {	answer = num1 * num2; }
 	if (operand == '&divide;') { divideIt(); }
 }
