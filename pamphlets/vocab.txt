@@ -10,3 +10,20 @@ sprite--
     [The term was derived from the fact that sprites, rather than being part of the bitmap data in the framebuffer, instead "floated" around on top without affecting the data in the framebuffer below, much like a ghost or "sprite".] --from Wikipedia
 
   A carbonated beverage.
+
+
+
+doctrine
+fact
+law
+theory
+Ice Age
+glaciers
+Bering Straight
+migrate
+theory
+Mongolians
+
+artifact
+archaeologist
+
