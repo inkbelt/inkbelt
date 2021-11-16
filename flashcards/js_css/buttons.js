@@ -41,6 +41,11 @@ const opObjects = [plus, minus, multiply, divide];
 // let difficulty_objects = [level];
 
 
+function playClick() {
+  new Audio( './assets/click.ogg').play();
+}
+
+
 
 function fixColor(symbol) {
   if (symbol.active == true) {
@@ -59,8 +64,24 @@ function fixButtonColors() {
 }
 
 
+
+function buttonGo() {
+  if (help.active == true) {
+    help.active = false;
+    help.style.background = colorOff;
+  } else {
+    help.active = true;
+    help.style.background = colorOn;
+  }
+  updateFeedback();
+  focusCursor();
+}
+
+
+
 function helpGo() {
   log('help go');
+  playClick();
   if (help.active == true) {
     help.active = false;
     help.style.background = colorOff;
@@ -73,6 +94,7 @@ function helpGo() {
 }
 
 function levelGo() {
+  playClick();
   if (level.self.innerHTML == 'Easy') {
     level.self.innerHTML = 'Medium';
   } else if (level.self.innerHTML == 'Medium') {
@@ -87,6 +109,7 @@ function levelGo() {
 
 
 function opGo(symbol) {
+  playClick();
   focusCursor();
   if (symbol.active === true) {
     if (operands.length === 1) { return; }
@@ -102,6 +125,7 @@ function opGo(symbol) {
 }
 
 function negGo() {
+  playClick();
   log('neg go');
   if (negatives.active == true) {
     negatives.active = false;

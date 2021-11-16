@@ -1,0 +1,48 @@
+
+
+.options {
+  z-index: 9;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-items: center;
+  position: fixed;
+  top: 40;
+  width: 210;
+  height: 165;
+  /*background: #93d;*/
+}
+
+#operators {
+  right: 30;
+}
+
+/*#difficulties {
+  left: 100;
+}*/
+
+.btn-options {
+  background: #eee;
+  text-align: center;
+  line-height: 40px;
+  width: 40;
+  height: 40;
+  font-family: monospace;
+  font-size: 16;
+  box-shadow: 2px 2px 4px #000B;
+  border-radius: 8px;
+  border: #222;
+  margin: 6px;
+  user-select: none;
+}
+
+#help, #level {
+  width: 80;
+}
+
+#negatives {
+  width: 120;
+  margin-right: 70;
+}
+
