@@ -41,12 +41,6 @@ const opObjects = [plus, minus, multiply, divide];
 // let difficulty_objects = [level];
 
 
-function playClick() {
-  new Audio( './assets/click.ogg').play();
-}
-
-
-
 function fixColor(symbol) {
   if (symbol.active == true) {
     symbol.style.background = colorOn;

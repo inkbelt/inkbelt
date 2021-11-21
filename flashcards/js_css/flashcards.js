@@ -29,6 +29,8 @@ let responseID = document.getElementById('response');
 let thinking = false;
 let feedbackID = document.getElementById('feedback');
 
+
+
 // let level = 'easy';  // 'easy' 'medium' 'hard'
 
 // operands = ['+'];
@@ -52,9 +54,11 @@ function newCard() {
 	setTimeout(clearFeedback, 300);
 }
 
+function pickFromArray(array) {
+	return array[Math.floor(Math.random() * array.length)];
+}
 
 function createNumbers() {
-
 	if (level.self.innerHTML === 'Easy') {
 	num1 = Math.floor(Math.random() * (6 + 6*neggy) - 6*neggy);
 	num2 = Math.floor(Math.random() * (6 + 6*neggy) - 6*neggy);
@@ -74,7 +78,7 @@ function num2Parentheses() {
 
 //const randomElement = array[Math.floor(Math.random() * array.length)];
 function chooseOperand() {
-	operand = operands[Math.floor(Math.random() * operands.length)];
+	operand = pickFromArray(operands);
 	log(operand);
 }
 
@@ -146,11 +150,13 @@ function submit() {
 	log('Submitted. Response:  '+response+'.  Answer:  '+answer+'.');
 	if (response == answer) {
 		feedback = 'Correct!';
+		playCorrect();
 		log(' CORRECT ');
 		updateFeedback();
 		newCard();
 	} else {
 		feedback = 'Try again.';
+		playWrong();
 		log(' INCORRECT ');
 		updateFeedback();
 		updateResponse();
