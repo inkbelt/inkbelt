@@ -41,6 +41,7 @@ newCard();
 
 function newCard() {
 	log('\n\nNew Card.\n');
+	playYes();
   createNumbers();
   chooseOperand();
 	noNegatives();

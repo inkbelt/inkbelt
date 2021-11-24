@@ -12,7 +12,7 @@
 
 <!--   <div class='options' id='difficulties'>
   </div> -->
-
+  <audio id="music" loop src="./beeps/buzzer.ogg" autoplay> </audio>
 
   <div class='options' id='operators'>
     <div class='btn-options' id='level' onclick="levelGo()">Easy</div>
@@ -44,17 +44,23 @@
     
   <script>
 		function goBack() {
-		  window.location = '../index.html';
+		  new Audio('./clicks/kerchunk.ogg').play();
+      setTimeout(function() {
+      	window.location = './fractions.html';
+      }, 400)
 		}
 		function goForward() {
-		  window.location = '../cat/index.html';
+		  new Audio('./clicks/kerchunk.ogg').play();
+      setTimeout(function() {
+      	window.location = './fractions.html';
+      }, 400)
 		}
 	</script>
 
   <script src="./js_css/buttons.js"></script>
+  <script src="./js_css/sounds.js"></script>
   <script src="./js_css/flashcards.js"></script>
   <script src="./js_css/key_bindings.js"></script>
-  <script src="./js_css/sounds.js"></script>
 
 
 

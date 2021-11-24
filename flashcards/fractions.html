@@ -1,0 +1,70 @@
+<!-- Fractions -->
+<html>
+<head>
+	<title> Fractions </title>
+  <link rel="stylesheet" type="text/css" href="./js_css/flashcards.css">
+  <link rel="stylesheet" type="text/css" href="./js_css/buttons.css">
+
+</head>
+
+
+<body>
+
+<!--   <div class='options' id='difficulties'>
+  </div> -->
+  <audio id="music" loop src="./beeps/buzzer.ogg" autoplay> </audio>
+
+  <div class='options' id='operators'>
+    <div class='btn-options' id='level' onclick="levelGo()">Easy</div>
+    <div class='btn-options' id='plus' onclick="opGo(plus)">+</div>
+    <div class='btn-options' id='minus' onclick="opGo(minus)">&ndash;</div>
+
+    <div class='btn-options' id='help' onclick="helpGo()">Help</div>
+    <div class='btn-options' id='multiply' onclick="opGo(multiply)">x</div>
+    <div class='btn-options' id='divide' onclick="opGo(divide)">&divide;</div>
+    <div class='btn-options' id='negatives' onclick="negGo()">Negatives</div>
+  </div>
+
+	<div class='card'>
+		<div class='feedback' id='feedback'></div>
+		<div class='holder1'>
+			<p class='figure' id='num1'></p>
+			<p class='figure' id='operand'></p>
+			<p class='figure' id='num2'></p>
+			<p class='figure' id='equals'>=</p>
+			<input class='figure' id='response'></input>
+		</div>
+		<div class='holder2'>
+			<button type='submit' class='submit' onclick='submit()'>Submit</button>
+		</div>
+	</div>
+
+  <button class='nav1' onclick='goBack()'> &#8678; </button>
+  <button class='nav2' onclick='goForward()'> &#8680; </button>
+    
+  <script>
+		function goBack() {
+		  new Audio('./clicks/kerchunk.ogg').play();
+      setTimeout(function() {
+      	window.location = './index.html';
+      }, 400)
+		}
+		function goForward() {
+		  new Audio('./clicks/kerchunk.ogg').play();
+      setTimeout(function() {
+      	window.location = './index.html';
+      }, 400)
+
+		}
+	</script>
+
+  <script src="./js_css/buttons.js"></script>
+  <script src="./js_css/sounds.js"></script>
+  <script src="./js_css/flashcards.js"></script>
+  <script src="./js_css/key_bindings.js"></script>
+
+
+
+</body>
+
+</html>
