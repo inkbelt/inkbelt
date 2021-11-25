@@ -15,7 +15,7 @@ function log(shortLog) {
 let num1 = 1;
 let num2 = 1;
 let num3 = 1;
-let neggy = 0;
+let negify = 0;
 // let num4;
 let num1ID = document.getElementById('num1');
 let num2ID = document.getElementById('num2');
@@ -29,19 +29,11 @@ let responseID = document.getElementById('response');
 let thinking = false;
 let feedbackID = document.getElementById('feedback');
 
-
-
-// let level = 'easy';  // 'easy' 'medium' 'hard'
-
-// operands = ['+'];
-
-
 newCard();
-//	FocusCursor();
 
 function newCard() {
 	log('\n\nNew Card.\n');
-	playYes();
+	// playCorrect();
   createNumbers();
   chooseOperand();
 	noNegatives();
@@ -61,14 +53,14 @@ function pickFromArray(array) {
 
 function createNumbers() {
 	if (level.self.innerHTML === 'Easy') {
-	num1 = Math.floor(Math.random() * (6 + 6*neggy) - 6*neggy);
-	num2 = Math.floor(Math.random() * (6 + 6*neggy) - 6*neggy);
+	num1 = Math.floor(Math.random() * (6 + 6*negify) - 6*negify);
+	num2 = Math.floor(Math.random() * (6 + 6*negify) - 6*negify);
 	} else if (level.self.innerHTML === 'Medium') {
-	num1 = Math.floor(Math.random() * (9 + 12*neggy) + 4 - 12*neggy);
-	num2 = Math.floor(Math.random() * (6 + 12*neggy) + 3 - 12*neggy);
+	num1 = Math.floor(Math.random() * (9 + 12*negify) + 4 - 12*negify);
+	num2 = Math.floor(Math.random() * (6 + 12*negify) + 3 - 12*negify);
 	} else {
-	num1 = Math.floor(Math.random() * (4 + 15*neggy) + 12 - 15*neggy);
-	num2 = Math.floor(Math.random() * (8 + 15*neggy) + 5 - 15*neggy);
+	num1 = Math.floor(Math.random() * (4 + 15*negify) + 12 - 15*negify);
+	num2 = Math.floor(Math.random() * (8 + 15*negify) + 5 - 15*negify);
 	}
 }
 

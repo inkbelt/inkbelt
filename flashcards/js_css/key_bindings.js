@@ -20,7 +20,7 @@ document.onkeydown = pressKey;
 
 function pressKey() {
   if (keyList[window.event.key]) {
-    keyList[window.event.key]();
+    keyList[window.event.key].call();
   }
 }
 

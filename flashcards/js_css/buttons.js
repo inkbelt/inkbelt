@@ -6,11 +6,8 @@
 
 window.addEventListener("load", fixButtonColors);
 
-
 const colorOn = '#eee';
 const colorOff = '#aaa';
-
-
 
 const plus = { active: true,
              content: '+',
@@ -34,11 +31,7 @@ const level = { //level: 'Easy',
 const negatives = { active: false,
                   style: document.getElementById('negatives').style };
 
-// let level_value = level.self.innerHTML;
-
 const opObjects = [plus, minus, multiply, divide];
-
-// let difficulty_objects = [level];
 
 
 function fixColor(symbol) {
@@ -56,22 +49,6 @@ function fixButtonColors() {
   fixColor(help);
   fixColor(negatives);
 }
-
-
-
-function buttonGo() {
-  if (help.active == true) {
-    help.active = false;
-    help.style.background = colorOff;
-  } else {
-    help.active = true;
-    help.style.background = colorOn;
-  }
-  updateFeedback();
-  focusCursor();
-}
-
-
 
 function helpGo() {
   log('help go');
@@ -124,17 +101,16 @@ function negGo() {
   if (negatives.active == true) {
     negatives.active = false;
     negatives.style.background = colorOff;
-    neggy = 0;
+    negify = 0;
   } else {
     negatives.active = true;
     negatives.style.background = colorOn;
-    neggy = 1;
+    negify = 1;
   }
   updateFeedback();
   focusCursor();
   newCard();
 }
-
 
 function updateOperands() {
   operands = [];
