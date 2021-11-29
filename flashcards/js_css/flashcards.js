@@ -16,7 +16,6 @@ let num1 = 1;
 let num2 = 1;
 let num3 = 1;
 let negify = 0;
-// let num4;
 let num1ID = document.getElementById('num1');
 let num2ID = document.getElementById('num2');
 let feedback = '';
@@ -68,17 +67,15 @@ function num2Parentheses() {
 	if (num2 < 0) {	num2 = '(' + num2 + ')'; }
 }
 
-
-//const randomElement = array[Math.floor(Math.random() * array.length)];
 function chooseOperand() {
 	operand = pickFromArray(operands);
 	log(operand);
 }
 
 function noNegatives() {
-	if (negatives.active == false &&
-      operand == '&ndash;' && num2 > num1) {
-			  num3 = num1; num1 = num2; num2 = num3; // swap numbers
+	if ( negatives.active == false && operand == '&ndash;' &&
+	     num2 > num1 ) {
+	  num3 = num1; num1 = num2; num2 = num3; // swap numbers
 	}
 }
 
@@ -130,12 +127,6 @@ function focusCursor() {
 	responseID.focus();
 }
 
-// document.onkeydown = function() {	 // Enter key submits
-//   if (window.event.keyCode == '13') {
-//   	if (thinking != 1) { Submit(); }
-//   }
-// }
-
 function submit() {
 	thinking = true;
 	focusCursor();
@@ -143,14 +134,14 @@ function submit() {
 	log('Submitted. Response:  '+response+'.  Answer:  '+answer+'.');
 	if (response == answer) {
 		feedback = 'Correct!';
-		playCorrect();
 		log(' CORRECT ');
+		playCorrect();
 		updateFeedback();
 		newCard();
 	} else {
 		feedback = 'Try again.';
-		playWrong();
 		log(' INCORRECT ');
+		playWrong();
 		updateFeedback();
 		updateResponse();
 		setTimeout(clearFeedback, 500);

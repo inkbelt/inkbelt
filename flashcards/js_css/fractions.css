@@ -1,0 +1,152 @@
+/*                          */
+/*    flashcards.css        */
+/*                          */
+
+* {
+  padding: 0;
+  /*margin: 0;*/
+}
+
+body {
+	display: flex;
+	/*flex-direction: column;*/
+	justify-content: center;
+	align-items: center;
+	/*background-image: url('../assets/paisley.jpg');*/
+	background: #888;
+	background-image: linear-gradient(#888, #555);
+}
+
+.card, .holder1, .holder2  {
+	display: flex;
+	justify-content: center;
+	background: #ddd;
+}
+
+.card {
+	position: relative;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	width: 50%;
+	height: 60%;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #333;
+	border-radius: 30px;
+	margin-top: 0px;
+}
+
+.feedback {
+	position: absolute;
+	top: 40px;
+	font-family: monospace;
+	font-size: 30;
+	text-align: center;
+	margin-right: 70px;
+}
+
+.holder1, .holder2 {
+	background: #0000;
+	/*position: absolute;*/
+	align-items: center;
+	margin-left: 50px;
+	margin-right: 50px;
+	/*padding: 0px;*/
+}
+.holder1 {
+	background: #00d;
+	/*top: 70px;*/
+	/*margin-top: 0px;*/
+}
+.holder2 {
+	background: #0d0;
+	bottom: 25px;
+	/*margin-bottom: 10px;*/
+}
+
+.frac1 {
+	background: #0dd;
+	display: flex;
+	flex-direction: column;
+
+}
+.frac2 {
+	background: #dd0;
+	display: flex;
+	flex-direction: column;
+}
+#divisor {
+	/*position: absolute;*/
+	/*top: 50%;*/
+	margin-top: -30px;
+	margin-bottom: -25px;
+	line-height: 0px;
+}
+
+
+.figure {
+	font-family: monospace;
+	font-size: 60;
+	font-weight: bolder;
+	margin-left: 14;
+	margin-right: 14;
+	line-height: 4px;
+	text-align: center;
+}
+
+input {
+	background: #ddd;
+	width: 120;
+	height: 90;
+	border: 1px solid #777;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	outline:  none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+	text-align: center;
+}
+
+button {
+	/*text-align: center;*/
+	width: 100;
+	height: 50;
+	font-family: monospace;
+	font-size: 20;
+	box-shadow: 2px 2px 4px #000B;
+	border-radius: 8px;
+	margin-right: 30px;
+}
+
+  .nav1, .nav2 {
+    position: absolute;
+    bottom: 30%;
+    padding-top: 0px;
+    line-height: 40px;
+    font-size: 50px;
+    width: 100px;
+    height: 60px;
+    font-family: monospace;
+    font-weight: 700;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    background: #ddd;
+    color: #444;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 7px #000B;
+  }
+
+  .nav1 {
+    left: 50px;
+  }
+  .nav2 {
+    right: 50px;
+  }
+
+
+
+
