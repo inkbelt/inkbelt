@@ -1,5 +1,5 @@
 /*                          */
-/*    flashcards.css        */
+/*     fractions.css        */
 /*                          */
 
 * {
@@ -9,7 +9,6 @@
 
 body {
 	display: flex;
-	/*flex-direction: column;*/
 	justify-content: center;
 	align-items: center;
 	/*background-image: url('../assets/paisley.jpg');*/
@@ -20,15 +19,16 @@ body {
 .card, .holder1, .holder2  {
 	display: flex;
 	justify-content: center;
-	background: #ddd;
+	background: #eed;
 }
 
 .card {
 	position: relative;
-	align-items: flex-end;
+	align-items: center;
 	flex-wrap: wrap;
-	width: 50%;
-	height: 60%;
+  flex-direction: column;
+	width: 60%;
+	height: 70%;
 	border-style: solid;
 	border-width: 4px;
 	border-color: #333;
@@ -37,16 +37,17 @@ body {
 }
 
 .feedback {
+	/*background: #fff;*/
 	position: absolute;
-	top: 40px;
+	top: 20px;
 	font-family: monospace;
 	font-size: 30;
 	text-align: center;
-	margin-right: 70px;
+	margin-right: 40px;
 }
 
 .holder1, .holder2 {
-	background: #0000;
+	/*background: #ddd;*/
 	/*position: absolute;*/
 	align-items: center;
 	margin-left: 50px;
@@ -54,27 +55,29 @@ body {
 	/*padding: 0px;*/
 }
 .holder1 {
-	background: #00d;
+	margin-top: 20px;
+	/*background: #00d;*/
 	/*top: 70px;*/
 	/*margin-top: 0px;*/
 }
 .holder2 {
-	background: #0d0;
-	bottom: 25px;
+	/*background: #0d0;*/
+	margin-top: 20px;
+	/*bottom: 25px;*/
 	/*margin-bottom: 10px;*/
 }
 
-.frac1 {
-	background: #0dd;
+.fraction1, .fraction2 {
+	/*background: #0dd;*/
+	min-width: 140px;
 	display: flex;
 	flex-direction: column;
 
 }
-.frac2 {
-	background: #dd0;
-	display: flex;
-	flex-direction: column;
+.fraction2 {
+	/*background: #dd0;*/
 }
+
 #divisor {
 	/*position: absolute;*/
 	/*top: 50%;*/
@@ -85,6 +88,7 @@ body {
 
 
 .figure {
+	/*background: #aad;*/
 	font-family: monospace;
 	font-size: 60;
 	font-weight: bolder;
@@ -95,7 +99,8 @@ body {
 }
 
 input {
-	background: #ddd;
+	background: #eed;
+	/*background: #ddf;*/
 	width: 120;
 	height: 90;
 	border: 1px solid #777;
@@ -117,35 +122,35 @@ button {
 	font-size: 20;
 	box-shadow: 2px 2px 4px #000B;
 	border-radius: 8px;
-	margin-right: 30px;
+	/*margin-right: 30px;*/
 }
 
-  .nav1, .nav2 {
-    position: absolute;
-    bottom: 30%;
-    padding-top: 0px;
-    line-height: 40px;
-    font-size: 50px;
-    width: 100px;
-    height: 60px;
-    font-family: monospace;
-    font-weight: 700;
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    background: #ddd;
-    color: #444;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 2px 2px 7px #000B;
-  }
+.nav1, .nav2 {
+  position: absolute;
+  bottom: 30%;
+  padding-top: 0px;
+  line-height: 40px;
+  font-size: 50px;
+  width: 100px;
+  height: 60px;
+  font-family: monospace;
+  font-weight: 700;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  background: #ddd;
+  color: #444;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 7px #000B;
+}
 
-  .nav1 {
-    left: 50px;
-  }
-  .nav2 {
-    right: 50px;
-  }
+.nav1 {
+  left: 50px;
+}
+.nav2 {
+  right: 50px;
+}
 
 
 

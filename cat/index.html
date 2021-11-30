@@ -21,11 +21,18 @@
 
     <script type="text/javascript">
       function GoBack() {
-        window.location = '../flashcards/index.html';
+        new Audio('./assets/meow1.wav').play();
+        setTimeout(function() { 
+          window.location = '../flashcards/fractions.html';
+        }, 800);
       }
       function GoForward() {
-        window.location = '../quadrant/index.html';
+        new Audio('./assets/meow2.wav').play();
+        setTimeout(function() { 
+          window.location = '../quadrant/index.html';
+        }, 800);
       }
+
     </script>
 
     <button class='nav1' onclick='GoBack()'> &#8678; </button>

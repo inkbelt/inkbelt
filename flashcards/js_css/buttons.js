@@ -43,9 +43,7 @@ function fixColor(symbol) {
 }
 
 function fixButtonColors() {
-  opObjects.forEach(function(symbol){
-    fixColor(symbol);
-  });
+  opObjects.forEach(function(symbol){fixColor(symbol);});
   fixColor(help);
   fixColor(negatives);
 }
