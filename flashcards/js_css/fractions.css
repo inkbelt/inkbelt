@@ -19,10 +19,10 @@ body {
 .card, .holder1, .holder2  {
 	display: flex;
 	justify-content: center;
-	background: #eed;
 }
 
 .card {
+	background: #eed;
 	position: relative;
 	align-items: center;
 	flex-wrap: wrap;
@@ -43,28 +43,20 @@ body {
 	font-family: monospace;
 	font-size: 30;
 	text-align: center;
-	margin-right: 40px;
+	width:  80%;
+	/*margin-right: 40px;*/
 }
 
 .holder1, .holder2 {
-	/*background: #ddd;*/
-	/*position: absolute;*/
 	align-items: center;
-	margin-left: 50px;
-	margin-right: 50px;
-	/*padding: 0px;*/
 }
 .holder1 {
 	margin-top: 20px;
 	/*background: #00d;*/
-	/*top: 70px;*/
-	/*margin-top: 0px;*/
 }
 .holder2 {
 	/*background: #0d0;*/
 	margin-top: 20px;
-	/*bottom: 25px;*/
-	/*margin-bottom: 10px;*/
 }
 
 .fraction1, .fraction2 {
@@ -79,8 +71,6 @@ body {
 }
 
 #divisor {
-	/*position: absolute;*/
-	/*top: 50%;*/
 	margin-top: -30px;
 	margin-bottom: -25px;
 	line-height: 0px;
@@ -151,7 +141,5 @@ button {
 .nav2 {
   right: 50px;
 }
-
-
 
 

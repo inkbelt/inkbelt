@@ -1,0 +1,44 @@
+<!-- primes.html -->
+<html>
+<head>
+	<title> Prime Numbers </title>
+  <link rel="stylesheet" type="text/css" href="./js_css/math.css">
+  <link rel="stylesheet" type="text/css" href="./js_css/buttons.css">
+</head>
+
+
+<body>
+	<div class='card2'>
+		<pre class='hh2' id='title'>Prime Numbers</pre>
+
+		<table id='primes'></table>
+
+		<div>
+			<button class='nav00' id='nav0d' onclick='nextSet()'>&#129095;</button>
+		</div>
+
+	</div>
+
+  <button class='nav1' onclick='goBack()'> &#8678; </button>
+  <button class='nav2' onclick='goForward()'> &#8680; </button>
+    
+  <script>
+		function goBack() {
+		  new Audio('./assets/kerchunk.ogg').play();
+      setTimeout(function() {
+      	window.location = './index.html';
+      }, 400);
+		}
+		function goForward() {
+		  new Audio('./assets/kerchunk.ogg').play();
+      setTimeout(function() {
+      	window.location = '../cat/index.html';
+      }, 400);
+		}
+	</script>
+
+  <script src="./js_css/primes.js"></script>
+
+</body>
+
+</html>

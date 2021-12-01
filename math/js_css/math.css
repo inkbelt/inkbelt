@@ -1,0 +1,151 @@
+/*                          */
+/*      math.css            */
+/*                          */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body, .overlay {
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/frac1.svg');
+  background-size: 180%;
+  background-position: -170%, -30%;
+  /*background: #8883;*/
+  /*background-image: linear-gradient(#888, #555);*/
+}
+
+.overlay {
+  width:  100%;
+  height: 100%;
+  /*background: #777d;*/
+  background-image: linear-gradient(#8889, #555c);
+}
+
+.card, .card2 {
+  display: flex;
+  justify-content: center;
+  background: #ddd;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  height: 86%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #333;
+  border-radius: 20px;
+  margin-top: 0px;
+}
+
+.card2 {
+  box-shadow: 0px 0px 160px #000;
+}
+
+.header {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+table {
+  width: 70%;
+  height: 50%;
+  margin-right: 8%;
+  text-align: right;
+}
+
+.figure, .hh1, .hh2, td {
+  font-family: monospace;
+  font-size: 50;
+  font-weight: bold;
+  margin-left: 14;
+  margin-right: 14;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /*line-height: 4px;*/
+}
+.hh1, .hh2 {
+  font-weight: bolder ;
+  font-size: 70;
+  margin-top: -20px;
+  margin-bottom: 0px;
+}
+
+.hh2 {
+  font-size: 80;
+  transform:scaleY(60%);
+  letter-spacing: 10px;
+/*  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;*/
+}
+
+
+td {
+  width: 100px;
+}
+
+button {
+  width: 40;
+  height: 40;
+  font-family: monospace;
+  font-size: 22px;
+  box-shadow: 1px 1px 3px #0004;
+  border-radius: 6px;
+}
+
+.nav00 {
+  background: #ddd;
+  font-weight: bolder;
+  cursor: pointer;
+  color: #ccc;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000; 
+}
+
+#nav0d {
+  background: #bbb;
+  position: relative;
+  top: 30;
+  color: #eee;
+}
+
+.nav1, .nav2 {
+  position: absolute;
+  bottom: 30%;
+  padding-top: 0px;
+  line-height: 40px;
+  font-size: 50px;
+  width: 100px;
+  height: 60px;
+  font-family: monospace;
+  font-weight: 700;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  background: #ddd;
+  color: #444;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 7px #000B;
+}
+
+.nav1 {
+  left: 50px;
+}
+.nav2 {
+  right: 50px;
+}
+
+
+
+

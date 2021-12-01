@@ -43,23 +43,11 @@ function newCard() {
   adjustMultipliers();
   chooseMultiplier();
   createNumbers();
-  // makeAnswer();
-
-  // createNumbers();
-
-
-  // getAnswer();
-  // response = 0;
   num1ID.innerHTML = num1;
-  // num2ID.innerHTML = num2;
   den1ID.innerHTML = den1;
   den2ID.innerHTML = den2;
   updateResponse();
   setTimeout(clearFeedback, 300);
-
-  // chooseOperand();
-  // operandID.innerHTML = operand;
-  // num2Parentheses();
 }
 
 function pickFromArray(array) {
@@ -87,11 +75,11 @@ function createNumbers() {
     den1 = Math.floor(Math.random() * 4 + 2);
     noImpropers();
   } else if (level.self.innerHTML === 'Medium') {
-    num1 = Math.floor(Math.random() * 12); //(9 + 12*negify) + 4 - 12*negify);
-    den1 = Math.floor(Math.random() * 12 + 1); //(9 + 12*negify) + 4 - 12*negify);
+    num1 = Math.floor(Math.random() * 12);
+    den1 = Math.floor(Math.random() * 12 + 1);
   } else {
-    num1 = Math.floor(Math.random() * 16); //(4 + 15*negify) + 12 - 15*negify);
-    den1 = Math.floor(Math.random() * 16 + 1); //(4 + 15*negify) + 12 - 15*negify);
+    num1 = Math.floor(Math.random() * 16);
+    den1 = Math.floor(Math.random() * 16 + 1);
   }
   den2 = den1 * multiplier;
   answer = num1 * multiplier;
@@ -106,17 +94,9 @@ function noImpropers() {
   }
 }
 
-function getAnswer() {
-  answer = 5;
-  // if (operand == '+') {  answer = num1 + num2; }
-  // if (operand == '&ndash;') {  answer = num1 - num2; }
-  // if (operand == 'x') {  answer = num1 * num2; }
-  // if (operand == '&divide;') { divideIt(); }
-}
-
 function helpInfo() {
   if (help.active == true) {
-  feedbackID.innerHTML = num1 + '/' + den1 + '  =  ' +
+  feedbackID.innerHTML = num1 + '/' + den1 + '   =   ' +
       answer + '/' + den2;
   }
 }
