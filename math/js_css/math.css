@@ -1,6 +1,6 @@
-/*                          */
-/*      math.css            */
-/*                          */
+/*                            */
+/*   math.css                 */
+/*        club secret style   */
 
 * {
   padding: 0;
@@ -51,6 +51,7 @@ body, .overlay {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 table {
@@ -72,23 +73,22 @@ table {
 }
 .hh1, .hh2 {
   font-weight: bolder ;
-  font-size: 70;
+  font-size: 80;
   margin-top: -20px;
   margin-bottom: 0px;
 }
 
 .hh2 {
   font-size: 80;
-  transform:scaleY(60%);
-  letter-spacing: 10px;
-/*  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;*/
+  transform:scaleY(120%);
+  letter-spacing: -3px;
 }
 
-
 td {
-  width: 100px;
+  width: 500px;
+}
+.cell {
+  font-size: 50;
 }
 
 button {
@@ -112,6 +112,7 @@ button {
      1px 1px 0 #000; 
 }
 
+/* hapsplash id */
 #nav0d {
   background: #bbb;
   position: relative;

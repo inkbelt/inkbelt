@@ -8,10 +8,15 @@
 
 
 <body>
-	<div class='card2'>
-		<pre class='hh2' id='title'>Prime Numbers</pre>
 
-		<table id='primes'></table>
+	<div class='card2'>
+		<div class='header'>
+			<button class='nav00' onclick='prevNumber()'>&#129092;</button>
+			<pre class='hh2' id='title'>Prime Numbers</pre>
+			<button class='nav00' onclick='nextNumber()'>&#129094;</button>
+		</div>
+
+		<table id='table'></table>
 
 		<div>
 			<button class='nav00' id='nav0d' onclick='nextSet()'>&#129095;</button>
@@ -23,14 +28,16 @@
   <button class='nav2' onclick='goForward()'> &#8680; </button>
     
   <script>
+  	const swipe = new Audio('./assets/kerchunk.ogg');
+
 		function goBack() {
-		  new Audio('./assets/kerchunk.ogg').play();
+		  swipe.play();
       setTimeout(function() {
       	window.location = './index.html';
       }, 400);
 		}
 		function goForward() {
-		  new Audio('./assets/kerchunk.ogg').play();
+		  swipe.play();
       setTimeout(function() {
       	window.location = '../cat/index.html';
       }, 400);
@@ -38,6 +45,7 @@
 	</script>
 
   <script src="./js_css/primes.js"></script>
+  <script src="./js_css/key_bindings.js"></script>
 
 </body>
 

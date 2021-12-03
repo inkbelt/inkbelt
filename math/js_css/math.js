@@ -9,7 +9,13 @@ const tableDiv = document.getElementById('multiples');
 const setArrow = document.getElementById('nav0d');
 let set = 1;
 
+const click1 = new Audio('./assets/click.ogg');
+const click2 = new Audio('./assets/rasp_click3.ogg');
+const click3 = new Audio('./assets/typing6.ogg');
+const click4 = new Audio('./assets/typing7.ogg');
+
 function prevNumber() {
+  click2.play();
   baseNumber -= 1;
   title.innerHTML = baseNumber;
   freshSet();
@@ -18,6 +24,7 @@ function prevNumber() {
 }
 
 function nextNumber() {
+  click1.play();
   baseNumber += 1;
   title.innerHTML = baseNumber;
   freshSet();
@@ -35,6 +42,7 @@ function freshSet() {
 
 function nextSet() {
   if (set === 1) {
+    click3.play();
     setArrow.innerHTML = '&#129093;';
     setArrow.style.background = '#eee';
     setArrow.style.color = '#ccc';
@@ -42,6 +50,7 @@ function nextSet() {
     multiple = 16;
     updateTable();
   } else {
+    click4.play();
     freshSet();
     updateTable();
   }

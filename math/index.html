@@ -1,4 +1,10 @@
-<!-- Math -->
+<!--      Math
+          index.html
+								hobo turbo miles land
+								hobo turd Matt Lemmon
+								happy turtle Mark Little
+								hyper turtle Mandatory Length      -->
+
 <html>
 <head>
 	<title> Multiplication Tables </title>
@@ -29,14 +35,16 @@
   <button class='nav2' onclick='goForward()'> &#8680; </button>
     
   <script>
+  	const swipe = new Audio('./assets/kerchunk.ogg');
+
 		function goBack() {
-		  new Audio('./assets/kerchunk.ogg').play();
+		  swipe.play();
       setTimeout(function() {
       	window.location = '../flashcards/fractions.html';
       }, 400);
 		}
 		function goForward() {
-		  new Audio('./assets/kerchunk.ogg').play();
+		  swipe.play();
       setTimeout(function() {
       	window.location = './primes.html';
       }, 400);
@@ -44,6 +52,7 @@
 	</script>
 
   <script src="./js_css/math.js"></script>
+  <script src="./js_css/key_bindings.js"></script>
 
 </body>
 
