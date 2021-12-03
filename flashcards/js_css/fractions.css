@@ -25,7 +25,7 @@ body {
 	background: #eed;
 	position: relative;
 	align-items: center;
-	flex-wrap: wrap;
+	/*flex-wrap: wrap;*/
   flex-direction: column;
 	width: 60%;
 	height: 70%;
@@ -51,7 +51,7 @@ body {
 	align-items: center;
 }
 .holder1 {
-	margin-top: 20px;
+	margin-top: 30px;
 	/*background: #00d;*/
 }
 .holder2 {
@@ -105,15 +105,37 @@ input {
 }
 
 button {
-	/*text-align: center;*/
-	width: 100;
-	height: 50;
-	font-family: monospace;
-	font-size: 20;
-	box-shadow: 2px 2px 4px #000B;
-	border-radius: 8px;
+
 	/*margin-right: 30px;*/
+
+  width: 50;
+  height: 40;
+  font-family: monospace;
+  font-size: 26px;
+  box-shadow: 2px 2px 4px #0004;
+  border-radius: 6px;
 }
+
+.nav00 {
+  background: #ddd;
+  font-weight: bolder;
+  cursor: pointer;
+  color: #ccc;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000; 
+}
+
+#nav0d {
+  background: #ccb;
+  position: relative;
+  top: -8;
+  color: #eed;
+}
+
+
 
 .nav1, .nav2 {
   position: absolute;

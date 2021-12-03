@@ -17,22 +17,35 @@
 
 	<div class='card'>
 		<div class='feedback' id='feedback'></div>
+
 		<div class='holder1'>
+
 			<div class='fraction1'>
-				<p class='figure' id='num1'></p>
+				<div class='number' id='numerator1'>
+					<p class='figure' id='num1'></p>
+				</div>
 				<p class='figure' id='divisor'>&mdash;&mdash;</p>
-				<p class='figure' id='den1'></p>
+
+				<div class='number' id='denominator1'>
+					<p class='figure' id='den1'></p>
+				</div>
 			</div>
+
 			<p class='figure' id='equals'>=</p>
+
 			<div class='fraction2'>
-				<input class='figure' id='response'></input>
+				<div class='number' id='numerator2'>
+					<input class='figure' id='response'></input>
+				</div>
 				<p class='figure' id='divisor'>&mdash;&mdash;</p>
-				<p class='figure' id='den2'></p>
+				<div class='number' id='denominator2'>
+					<p class='figure' id='den2'></p>
+				</div>
 			</div>
 		</div>
-<!-- 		<div class='holder2'>
-			<button type='submit' class='submit' onclick='submit()'>Submit</button>
-		</div> -->
+		<div class>
+			<button class='nav00' id='nav0d' onclick='swapSides()'>&#8651;</button>
+		</div>
 	</div>
 
   <div class='options' id='options-box'>

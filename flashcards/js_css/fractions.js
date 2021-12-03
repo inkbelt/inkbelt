@@ -4,13 +4,11 @@
 
 const debug = 0;
 let longLog = '';
-function log(shortLog) {
-  if (debug == true) {
-    longLog = longLog + ' ' + shortLog;
-    console.log(longLog);
-  } 
+function log(shortLog) { if (debug == true) {
+    longLog = longLog + ' ' + shortLog; console.log(longLog);  } }
+function pickFromArray(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
-
 
 let num1 = 1;
 let num2 = 1;
@@ -20,6 +18,10 @@ let num1ID = document.getElementById('num1');
 let num2ID = document.getElementById('num2');
 let den1ID = document.getElementById('den1');
 let den2ID = document.getElementById('den2');
+let numerator1 = document.getElementById('numerator1');
+let numerator2 = document.getElementById('numerator2');
+let denominator1 = document.getElementById('denominator1');
+let denominator2 = document.getElementById('denominator2');
 let feedback = '';
 let operand = '+';
 let operandID = document.getElementById('operand');
@@ -36,6 +38,10 @@ let hardMultipliers = [11, 12, 13, 14];
 let multipliers = easyMultipliers;
 let multiplier = 1;
 
+const swapArrow = document.getElementById('nav0d');
+let position = 'right';
+
+
 newCard();
 
 function newCard() {
@@ -50,8 +56,46 @@ function newCard() {
   setTimeout(clearFeedback, 300);
 }
 
-function pickFromArray(array) {
-  return array[Math.floor(Math.random() * array.length)];
+function swapSides() {
+  thuck.play();
+  splishZap.play();
+  if (position === 'right') {
+    right2Left();
+    position = 'left';
+    // swapArrow.style.background = '#ddc';
+    // swapArrow.style.color = '#887';
+    swapArrow.innerHTML = '&#8652;';
+  } else {
+    left2Right();
+    position = 'right';
+    // swapArrow.style.background = '#ccb';
+    // swapArrow.style.color = '#eed';
+    swapArrow.innerHTML = '&#8651;';
+  }
+}
+
+function right2Left() {
+  numerator1.removeChild(num1ID);
+  numerator2.removeChild(responseID);
+  numerator1.appendChild(responseID);
+  numerator2.appendChild(num1ID);
+  denominator1.removeChild(den1ID);
+  denominator2.removeChild(den2ID);
+  denominator1.appendChild(den2ID);
+  denominator2.appendChild(den1ID);
+  focusCursor();
+}
+
+function left2Right() {
+  numerator1.removeChild(responseID);
+  numerator2.removeChild(num1ID);
+  numerator1.appendChild(num1ID);
+  numerator2.appendChild(responseID);
+  denominator1.removeChild(den2ID);
+  denominator2.removeChild(den1ID);
+  denominator1.appendChild(den1ID);
+  denominator2.appendChild(den2ID);
+  focusCursor();
 }
 
 function adjustMultipliers() {
@@ -87,7 +131,7 @@ function createNumbers() {
 
 function noImpropers() {
   if (num1 > den1) {
-    num2 = num1; num1 = den1; den1 = num2; // swap numbers
+    num2 = num1; num1 = den1; den1 = num2;
   }
   if (num1 == den1) {
     num1 -= 1;
@@ -96,7 +140,7 @@ function noImpropers() {
 
 function helpInfo() {
   if (help.active == true) {
-  feedbackID.innerHTML = num1 + '/' + den1 + '   =   ' +
+    feedbackID.innerHTML = num1 + '/' + den1 + '   =   ' +
       answer + '/' + den2;
   }
 }
