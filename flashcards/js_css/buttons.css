@@ -18,10 +18,6 @@
   right: 30;
 }
 
-/*#difficulties {
-  left: 100;
-}*/
-
 .btn-options {
   background: #eee;
   text-align: center;
@@ -37,7 +33,7 @@
   user-select: none;
 }
 
-#help, #level {
+#help, #level, #reduce {
   width: 80;
 }
 

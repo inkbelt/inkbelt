@@ -18,7 +18,7 @@ function prevNumber() {
   click2.play();
   baseNumber -= 1;
   title.innerHTML = baseNumber;
-  freshSet();
+  // freshSet();
   updateTable();
   console.log('prevNumber');
 }
@@ -27,7 +27,7 @@ function nextNumber() {
   click1.play();
   baseNumber += 1;
   title.innerHTML = baseNumber;
-  freshSet();
+  // freshSet();
   updateTable();
   console.log('nextNumber')
 }

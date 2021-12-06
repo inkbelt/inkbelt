@@ -29,7 +29,7 @@ const thuck = new Audio('./clicks/thuck.ogg');
 const buzzer = new Audio('./beeps/buzzer.ogg');
 const splishZap = new Audio('./beeps/splish_zap.ogg');
 fwhick.volume = 0.2;
-thuck.volume = 0.1;
+thuck.volume = 0.2;
 splishZap.volume = 0.2;
 
 const click1 = new Audio('./clicks/click.ogg');

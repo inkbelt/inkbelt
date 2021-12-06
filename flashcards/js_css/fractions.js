@@ -62,14 +62,10 @@ function swapSides() {
   if (position === 'right') {
     right2Left();
     position = 'left';
-    // swapArrow.style.background = '#ddc';
-    // swapArrow.style.color = '#887';
     swapArrow.innerHTML = '&#8652;';
   } else {
     left2Right();
     position = 'right';
-    // swapArrow.style.background = '#ccb';
-    // swapArrow.style.color = '#eed';
     swapArrow.innerHTML = '&#8651;';
   }
 }
@@ -117,7 +113,6 @@ function createNumbers() {
   if (level.self.innerHTML === 'Easy') {
     num1 = Math.floor(Math.random() * 5 + 1);
     den1 = Math.floor(Math.random() * 4 + 2);
-    noImpropers();
   } else if (level.self.innerHTML === 'Medium') {
     num1 = Math.floor(Math.random() * 12);
     den1 = Math.floor(Math.random() * 12 + 1);
@@ -125,8 +120,17 @@ function createNumbers() {
     num1 = Math.floor(Math.random() * 16);
     den1 = Math.floor(Math.random() * 16 + 1);
   }
+  noImpropers();
   den2 = den1 * multiplier;
   answer = num1 * multiplier;
+  if (reduce.active) {
+    num2 = num1;
+    num1 = answer;
+    answer = num2;
+    num2 = den1;
+    den1 = den2;
+    den2 = num2;
+  }
 }
 
 function noImpropers() {

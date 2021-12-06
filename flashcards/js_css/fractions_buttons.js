@@ -13,8 +13,9 @@ const optionsBox = document.getElementById('options-box');
 const help = { active: false,
              style: document.getElementById('help').style };
 const level = { //level: 'Easy',
-             //style: document.getElementById('level').style,
              self: document.getElementById('level') };
+const reduce = { active: false,
+             style: document.getElementById('reduce').style };
 
 function fixColor(icon) {
   if (icon.active == true) {
@@ -26,6 +27,7 @@ function fixColor(icon) {
 
 function fixButtonColors() {
   fixColor(help);
+  fixColor(reduce);
   adjustSize();
 }
 function adjustSize() {
@@ -61,5 +63,17 @@ function levelGo() {
   newCard();
 }
 
+function reduceGo() {
+  log('reduce go');
+  playClick();
+  if (reduce.active == true) {
+    reduce.active = false;
+    reduce.style.background = colorOff;
+  } else {
+    reduce.active = true;
+    reduce.style.background = colorOn;
+  }
+  newCard();
+}
 
 
