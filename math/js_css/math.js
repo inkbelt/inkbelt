@@ -20,7 +20,6 @@ function prevNumber() {
   title.innerHTML = baseNumber;
   // freshSet();
   updateTable();
-  console.log('prevNumber');
 }
 
 function nextNumber() {
@@ -29,7 +28,6 @@ function nextNumber() {
   title.innerHTML = baseNumber;
   // freshSet();
   updateTable();
-  console.log('nextNumber')
 }
 
 function freshSet() {

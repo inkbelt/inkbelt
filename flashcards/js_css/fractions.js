@@ -39,9 +39,11 @@ let multipliers = easyMultipliers;
 let multiplier = 1;
 
 const swapArrow = document.getElementById('nav0d');
+const vertArrow = document.getElementById('nav0v');
 let position = 'right';
+let vPosition = 'top';
 
-
+console.log(num2ID);
 newCard();
 
 function newCard() {
@@ -56,43 +58,6 @@ function newCard() {
   setTimeout(clearFeedback, 300);
 }
 
-function swapSides() {
-  thuck.play();
-  splishZap.play();
-  if (position === 'right') {
-    right2Left();
-    position = 'left';
-    swapArrow.innerHTML = '&#8652;';
-  } else {
-    left2Right();
-    position = 'right';
-    swapArrow.innerHTML = '&#8651;';
-  }
-}
-
-function right2Left() {
-  numerator1.removeChild(num1ID);
-  numerator2.removeChild(responseID);
-  numerator1.appendChild(responseID);
-  numerator2.appendChild(num1ID);
-  denominator1.removeChild(den1ID);
-  denominator2.removeChild(den2ID);
-  denominator1.appendChild(den2ID);
-  denominator2.appendChild(den1ID);
-  focusCursor();
-}
-
-function left2Right() {
-  numerator1.removeChild(responseID);
-  numerator2.removeChild(num1ID);
-  numerator1.appendChild(num1ID);
-  numerator2.appendChild(responseID);
-  denominator1.removeChild(den2ID);
-  denominator2.removeChild(den1ID);
-  denominator1.appendChild(den1ID);
-  denominator2.appendChild(den2ID);
-  focusCursor();
-}
 
 function adjustMultipliers() {
   if (level.self.innerHTML === 'Easy') {
@@ -195,3 +160,64 @@ function submit() {
     setTimeout(clearFeedback, 500);
   }
 }
+
+
+function swapSides() {
+  thuck.play();
+  splishZap.play();
+  if (position === 'right') {
+    position = 'left';
+    swapArrow.innerHTML = '&#8652;';
+  } else {
+    position = 'right';
+    swapArrow.innerHTML = '&#8651;';
+  }
+  side2Side();
+}
+
+function swapVertical() {
+  thuck.play();
+  splishZap.play();
+  if (vPosition === 'top') {
+    vPosition = 'bottom';
+    vertArrow.innerHTML = '&#10607;';
+  } else {
+    vPosition = 'top';
+    vertArrow.innerHTML = '&#10606;';
+  }
+  top2Bottom();
+}
+
+function side2Side() {
+  let child1 = document.getElementById('numerator1').children[0];
+  let child2 = document.getElementById('denominator1').children[0];
+  let child3 = document.getElementById('numerator2').children[0];
+  let child4 = document.getElementById('denominator2').children[0];
+  numerator1.removeChildren;
+  numerator2.removeChildren;
+  numerator1.appendChild(child3);
+  numerator2.appendChild(child1);
+  denominator1.removeChildren;
+  denominator2.removeChildren;
+  denominator1.appendChild(child4);
+  denominator2.appendChild(child2);
+  focusCursor();  
+}
+
+function top2Bottom() {
+  let child1 = document.getElementById('numerator1').children[0];
+  let child2 = document.getElementById('denominator1').children[0];
+  let child3 = document.getElementById('numerator2').children[0];
+  let child4 = document.getElementById('denominator2').children[0];
+  numerator1.removeChildren;
+  denominator1.removeChildren;
+  numerator1.appendChild(child2);
+  denominator1.appendChild(child1);
+  numerator2.removeChildren;
+  denominator2.removeChildren;
+  numerator2.appendChild(child4);
+  denominator2.appendChild(child3);
+  focusCursor();
+}
+
+
