@@ -36,6 +36,26 @@ body {
 	margin-top: 0px;
 }
 
+input {
+	background: #eed0;
+	/*background: #ddf;*/
+	width: 120;
+	height: 90;
+	border: 1px solid #777;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	outline:  none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+	text-align: center;
+}
+
+#temp {
+	display: none;
+}
+
 .feedback {
 	/*background: #fff;*/
 	position: absolute;
@@ -76,7 +96,6 @@ body {
 	line-height: 0px;
 }
 
-
 .figure {
 	/*background: #aad;*/
 	font-family: monospace;
@@ -85,22 +104,6 @@ body {
 	margin-left: 14;
 	margin-right: 14;
 	line-height: 4px;
-	text-align: center;
-}
-
-input {
-	background: #eed0;
-	/*background: #ddf;*/
-	width: 120;
-	height: 90;
-	border: 1px solid #777;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	outline:  none;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
 	text-align: center;
 }
 
@@ -125,7 +128,7 @@ button {
      1px 1px 0 #000; 
 }
 
-#nav0d {
+#nav0h {
   background: #ccb;
   position: relative;
   top: -8;

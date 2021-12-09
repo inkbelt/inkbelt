@@ -24,9 +24,7 @@ const divide = { active: false,
 
 const help = { active: false,
              style: document.getElementById('help').style };
-const level = { //level: 'Easy',
-             //style: document.getElementById('level').style,
-             self: document.getElementById('level') };
+const level = { self: document.getElementById('level') };
 
 const negatives = { active: false,
                   style: document.getElementById('negatives').style };

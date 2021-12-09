@@ -19,15 +19,15 @@ let keyList = {
 document.onkeydown = pressKey;
 
 function pressKey() {
-  if (keyList[window.event.key]) {
+  if (thinking) { event.preventDefault(); }
+  else if (keyList[window.event.key]) {
     keyList[window.event.key].call();
   }
 }
 
 function enterKey() {
-  // console.log('enter');
   event.preventDefault();
-  if (!thinking) { submit(); }
+  submit();
 }
 
 function disabled() {

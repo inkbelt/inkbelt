@@ -17,11 +17,11 @@ const level = { //level: 'Easy',
 const reduce = { active: false,
              style: document.getElementById('reduce').style };
 
-function fixColor(icon) {
-  if (icon.active == true) {
-    icon.style.background = colorOn;
+function fixColor(button) {
+  if (button.active == true) {
+    button.style.background = colorOn;
   } else {
-    icon.style.background = colorOff;
+    button.style.background = colorOff;
   }
 }
 
@@ -46,7 +46,7 @@ function helpGo() {
     help.active = true;
     help.style.background = colorOn;
   }
-  updateFeedback();
+  clearFeedback();
   focusCursor();
 }
 
