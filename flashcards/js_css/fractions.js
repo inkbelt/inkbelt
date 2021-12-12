@@ -39,8 +39,8 @@ let thinking = false;
 let feedbackID = document.getElementById('feedback');
 
 let easyMultipliers = [2, 3, 4, 5];
-let mediumMultipliers = [4, 5, 6, 7, 8, 9];
-let hardMultipliers = [9, 10, 11, 12];
+let mediumMultipliers = [3, 4, 5, 6, 7, 8];
+let hardMultipliers = [9, 11, 12, 13, 14, 15];
 let multipliers = easyMultipliers;
 let multiplier = 1;
 
@@ -56,6 +56,7 @@ function newCard() {
   adjustMultipliers();
   chooseMultiplier();
   makeNumbers();
+  noImpropers();
   makeFrac2();
   if (reduce.active) { reduceFraction(); }
   getAnswer();
@@ -82,13 +83,22 @@ function chooseMultiplier() {
 function makeNumbers() {
   if (level.self.innerHTML === 'Easy') {
     num1 = Math.floor(Math.random() * 4 + 1);
-    den1 = num1 + Math.floor(Math.random() * 3 + 1);
+    den1 = Math.floor(Math.random() * 5 + 1);
   } else if (level.self.innerHTML === 'Medium') {
-    num1 = Math.floor(Math.random() * 6 + 1);
-    den1 = num1 + Math.floor(Math.random() * 4 + 1);
+    num1 = Math.floor(Math.random() * 5 + 2);
+    den1 = Math.floor(Math.random() * 6 + 2);
   } else {
     num1 = Math.floor(Math.random() * 8 + 4);
-    den1 = num1 + Math.floor(Math.random() * 3 + 1);
+    den1 = Math.floor(Math.random() * 12 + 3);
+  }
+}
+
+function noImpropers() {
+  if (num1 > den1) {
+    numX = num1; num1 = den1; den1 = numX;
+  }
+  if (num1 === den1) {
+    den1 += 1;
   }
 }
 

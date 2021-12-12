@@ -40,10 +40,10 @@ input {
 	background: #eed0;
 	/*background: #ddf;*/
 	width: 120;
-	height: 90;
+	height: 140;
 	border: 1px solid #777;
-	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-top: 0px;
+	margin-bottom: 5px;
 	outline:  none;
   border-top-style: hidden;
   border-right-style: hidden;
@@ -98,9 +98,10 @@ input {
 
 .figure {
 	/*background: #aad;*/
-	font-family: monospace;
+	font: bolder 70px 'consolas', monospace;
+/*	font-family: monospace;
 	font-size: 60;
-	font-weight: bolder;
+	font-weight: bolder;*/
 	margin-left: 14;
 	margin-right: 14;
 	line-height: 4px;
