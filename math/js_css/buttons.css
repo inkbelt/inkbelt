@@ -8,14 +8,14 @@
   justify-content: right;
   align-items: center;
   position: fixed;
-  top: 40;
-  width: 210;
-  height: 165;
+  top: 40px;
+  width: 210px;
+  height: 165px;
   /*background: #93d;*/
 }
 
 #options-box {
-  right: 30;
+  right: 30px;
 }
 
 /*#difficulties {
@@ -26,10 +26,10 @@
   background: #eee;
   text-align: center;
   line-height: 40px;
-  width: 40;
-  height: 40;
+  width: 40px;
+  height: 40px;
   font-family: monospace;
-  font-size: 16;
+  font-size: 16px;
   box-shadow: 2px 2px 4px #000B;
   border-radius: 8px;
   border: #222;
@@ -38,11 +38,11 @@
 }
 
 #help, #level {
-  width: 80;
+  width: 80px;
 }
 
 #negatives {
-  width: 120;
-  margin-right: 70;
+  width: 120px;
+  margin-right: 70px;
 }
 

@@ -2,12 +2,15 @@
 /*     fractions.css        */
 /*                          */
 
+html { height: 100%; }
+
 * {
   padding: 0;
   /*margin: 0;*/
 }
 
 body {
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -39,8 +42,8 @@ body {
 input {
 	background: #eed0;
 	/*background: #ddf;*/
-	width: 120;
-	height: 140;
+	width: 120px;
+	height: 140px;
 	border: 1px solid #777;
 	margin-top: 0px;
 	margin-bottom: 5px;
@@ -61,7 +64,7 @@ input {
 	position: absolute;
 	top: 20px;
 	font-family: monospace;
-	font-size: 30;
+	font-size: 30px;
 	text-align: center;
 	width:  80%;
 	/*margin-right: 40px;*/
@@ -102,15 +105,15 @@ input {
 /*	font-family: monospace;
 	font-size: 60;
 	font-weight: bolder;*/
-	margin-left: 14;
-	margin-right: 14;
+	margin-left: 14px;
+	margin-right: 14px;
 	line-height: 4px;
 	text-align: center;
 }
 
 button {
-  width: 50;
-  height: 40;
+  width: 50px;
+  height: 40px;
   font-family: monospace;
   font-size: 26px;
   box-shadow: 2px 2px 4px #0004;
@@ -132,14 +135,14 @@ button {
 #nav0h {
   background: #ccb;
   position: relative;
-  top: -8;
+  top: -8px;
   color: #eed;
 }
 
 #nav0v {
   background: #ccb;
-  width: 40;
-  height: 50;
+  width: 40px;
+  height: 50px;
   position: absolute;
   right: 85%;
   color: #eed;

@@ -8,34 +8,42 @@
   margin: 0;
 }
 
-body, .overlay {
+html { height: 100%; width: 100%; }
+
+body, .overlay, .overlay2 {
+  width: 100%;
+  height: 100%;
   display: flex;
-  /*flex-direction: column;*/
   justify-content: center;
   align-items: center;
+  /*flex-direction: column;*/
+  /*background-image: linear-gradient(#888, #555);*/
+  background: #8883;
   background-image: url('../assets/frac1.svg');
   background-size: 180%;
   background-position: -170%, -30%;
-  /*background: #8883;*/
-  /*background-image: linear-gradient(#888, #555);*/
 }
 
 .overlay {
-  width:  100%;
-  height: 100%;
   /*background: #777d;*/
   background-image: linear-gradient(#8889, #555c);
+}
+
+.overlay2 {
+  background: #8880;
 }
 
 .card, .card2 {
   display: flex;
   justify-content: center;
   background: #ddd;
-  position: relative;
+  /*position: aboslute;*/
+  /*position: relative;*/
   align-items: center;
   flex-direction: column;
   width: 80%;
   height: 86%;
+  min-width: 40rem;
   border-style: solid;
   border-width: 2px;
   border-color: #333;
@@ -64,23 +72,24 @@ table {
 
 .figure, .hh1, .hh2, td {
   font-family: monospace;
-  font-size: 50;
+  font-size: 50px;
   font-weight: bold;
-  margin-left: 14;
-  margin-right: 14;
+  margin-left: 14px;
+  margin-right: 14px;
   margin-top: 10px;
   margin-bottom: 10px;
   /*line-height: 4px;*/
 }
+
 .hh1, .hh2 {
   font-weight: bolder ;
-  font-size: 80;
+  font-size: 80px;
   margin-top: -20px;
   margin-bottom: 0px;
 }
 
 .hh2 {
-  font-size: 80;
+  font-size: 80px;
   transform:scaleY(120%);
   letter-spacing: -3px;
 }
@@ -89,12 +98,12 @@ td {
   width: 500px;
 }
 .cell {
-  font-size: 50;
+  font-size: 50px;
 }
 
 button {
-  width: 40;
-  height: 40;
+  width: 40px;
+  height: 40px;
   font-family: monospace;
   font-size: 22px;
   box-shadow: 1px 1px 3px #0004;
@@ -117,7 +126,7 @@ button {
 #nav0d {
   background: #bbb;
   position: relative;
-  top: 30;
+  top: 30px;
   color: #eee;
 }
 
