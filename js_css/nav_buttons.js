@@ -20,10 +20,10 @@
       }, 400);
     }
 
-    function Clicked() {
+    function Flashcards() {
       clickity.play();
       setTimeout(function() {
-        window.location = './cat/index.html';
+        window.location = './flashcards/index.html';
       }, 300);
     }
 

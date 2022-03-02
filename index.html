@@ -16,7 +16,10 @@
   <script src="./js_css/howler.js"></script>
   <script src="./js_css/nav_buttons.js"></script>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJRVK5L1VT"></script>
 </head>
+
+
 
 
 <!-- ---------------- BODY ---------------- -->
@@ -29,15 +32,22 @@
   </div>
 
   <div class='holder1'>
-    <h2><a href="./flashcards">Flashcards</h2>
-    <h2><a href="./quadrant">Covey Quadrant</a></h2>
+    <button class='nav1' onclick='GoBack()'> &#8678; </button>
+
+    <button class='clicky' onclick='Flashcards()'> Flashcards </button>
+    <button class='nav2' onclick='GoForward()'> &#8680; </button>
   </div>
 
-  <button class='clicky' onclick='clickity.play()'> Click </button>
-
-  <button class='nav1' onclick='GoBack()'> &#8678; </button>
-  <button class='nav2' onclick='GoForward()'> &#8680; </button>
  
 </body>
 </html>
 
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TJRVK5L1VT');
+</script>

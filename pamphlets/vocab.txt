@@ -12,7 +12,10 @@ sprite--
   A carbonated beverage.
 
 
-"the unstaisfying middle"
+"the unsatisfying middle" -- a balanced political position
+
+hueristic (n) -- a pragmatic method or technique
+
 
 doctrine
 fact
