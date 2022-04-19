@@ -1,0 +1,96 @@
+
+.strip {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div0 {
+  margin: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+.flag-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+
+.div1 {
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.div2 {
+  width: 580px;
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: space-around;
+  align-items: center;
+  /*margin-bottom: 60px;*/
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+
+}
+
+body {
+  background: #111;
+  font-family: monospace;
+}
+
+
+h1 {
+  color: #222;
+/*  margin-top: 10px;
+  margin-bottom: 10px;*/
+  text-align: center;
+  /*text-decoration: overline underline;*/
+  font-size: 60px;
+  font-weight: 600;
+  cursor: default;
+  /*-webkit-text-stroke: 1px white;*/
+/*  text-shadow:  -1px -1px 6px #000,
+                 1px -1px 6px #000,
+                -1px  1px 6px #000,
+                 1px  1px 6px #000;*/
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
+  margin-left: 70px;
+  margin-right: 10px;
+}
+
+a {
+  text-shadow:  -1px -1px 0 #111,
+                 1px -1px 0 #111,
+                -1px  1px 0 #111,
+                 1px  1px 0 #111;
+}
+
+a:link, a:visited { color: #fff; }
+a:hover, a:active { color: hotpink; text-decoration: underline;
+  cursor: crosshair; font-size: 40px; }

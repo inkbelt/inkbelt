@@ -1,7 +1,7 @@
 
-    var clickity = new Howl({urls: ["./assets/click.ogg"] });
-    var swooshIn = new Howl({urls: ["./assets/swoosh1.ogg"] });
-    var swooshOut = new Howl({urls: ["./assets/swoosh2.ogg"] });
+    var clickity = new Howl({urls: ["../assets/click.ogg"] });
+    var swooshIn = new Howl({urls: ["../assets/swoosh1.ogg"] });
+    var swooshOut = new Howl({urls: ["../assets/swoosh2.ogg"] });
 
     function Soundy() {
       if (Math.random() < 0.6) {
@@ -20,6 +20,13 @@
       }, 400);
     }
 
+    function GoForward() {
+      swooshIn.play();
+      setTimeout(function() {
+        window.location = './flashcards/index.html';
+      }, 300);
+    }
+
     function Flashcards() {
       clickity.play();
       setTimeout(function() {
@@ -27,9 +34,16 @@
       }, 300);
     }
 
-    function GoForward() {
-      swooshIn.play();
+    function UtahFlag() {
+      clickity.play();
       setTimeout(function() {
-        window.location = './flashcards/index.html';
+        window.location = './flag/index.html';
+      }, 300);
+    }
+
+    function Credentials() {
+      clickity.play();
+      setTimeout(function() {
+        window.location = '../credentials.html';
       }, 300);
     }

@@ -1,0 +1,18 @@
+GOSU CHEAT SHEET
+
+
+## Center Text
+
+`@text.x = $window.width/2 - @text.width/2`
+
+`Font.draw_text_rel()`
+
+https://www.rubydoc.info/gems/gosu/Gosu%2FFont:draw_text_rel
+
+
+## Ocra Build
+
+`ocra my_ruby_game.rb --windows --dll ruby_builtin_dlls\libssp-0.dll --dll ruby_builtin_dlls\libgmp-10.dll --dll ruby_builtin_dlls\libgcc_s_seh-1.dll --dll ruby_builtin_dlls\libwinpthread-1.dll`
+
+
+
