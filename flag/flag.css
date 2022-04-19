@@ -1,14 +1,10 @@
 
-.strip {
+.ribbon {
   margin-top: 30px;
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.div0 {
-  margin: 20px;
 }
 
 .box {
@@ -25,6 +21,28 @@
   margin: 40px;
 }
 
+.gull {
+  height: 160px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artboard {
+  height: 340px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+
+
+.div0 {
+  margin: 10px;
+}
 
 .div1 {
   width: 600px;
@@ -60,7 +78,7 @@ body {
 
 
 h1 {
-  color: #222;
+  color: #333;
 /*  margin-top: 10px;
   margin-bottom: 10px;*/
   text-align: center;
@@ -69,10 +87,10 @@ h1 {
   font-weight: 600;
   cursor: default;
   /*-webkit-text-stroke: 1px white;*/
-/*  text-shadow:  -1px -1px 6px #000,
+  text-shadow:  -1px -1px 6px #000,
                  1px -1px 6px #000,
                 -1px  1px 6px #000,
-                 1px  1px 6px #000;*/
+                 1px  1px 6px #000;
 }
 
 
